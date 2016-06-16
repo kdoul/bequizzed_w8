@@ -1,0 +1,592 @@
+﻿<Page
+    x:Name="pageRoot"
+    x:Class="Bequized.MainMenu"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Bequized"
+    xmlns:common="using:Bequized.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="Auto" Width="Auto">
+
+    <Page.Resources>
+        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
+        <x:String x:Key="AppName">My Application</x:String>
+        <Style x:Key="StartNormalTle" TargetType="GridViewItem">
+        	<Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+        	<Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+        	<Setter Property="Background" Value="Transparent"/>
+        	<Setter Property="TabNavigation" Value="Local"/>
+        	<Setter Property="IsHoldingEnabled" Value="True"/>
+        	<Setter Property="Margin" Value="0,0,2,2"/>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="GridViewItem">
+        				<GridViewItemPresenter CheckHintBrush="{ThemeResource ListViewItemCheckHintThemeBrush}" CheckBrush="{ThemeResource ListViewItemCheckThemeBrush}" ContentMargin="4" ContentTransitions="{TemplateBinding ContentTransitions}" CheckSelectingBrush="{ThemeResource ListViewItemCheckSelectingThemeBrush}" DragForeground="{ThemeResource ListViewItemDragForegroundThemeBrush}" DragOpacity="{ThemeResource ListViewItemDragThemeOpacity}" DragBackground="{ThemeResource ListViewItemDragBackgroundThemeBrush}" DisabledOpacity="{ThemeResource ListViewItemDisabledThemeOpacity}" FocusBorderBrush="{ThemeResource ListViewItemFocusBorderThemeBrush}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" PointerOverBackgroundMargin="1" PlaceholderBackground="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}" PointerOverBackground="{ThemeResource ListViewItemPointerOverBackgroundThemeBrush}" ReorderHintOffset="{ThemeResource ListViewItemReorderHintThemeOffset}" SelectedPointerOverBorderBrush="{ThemeResource ListViewItemSelectedPointerOverBorderThemeBrush}" SelectionCheckMarkVisualEnabled="True" SelectedForeground="{ThemeResource ListViewItemSelectedForegroundThemeBrush}" SelectedPointerOverBackground="{ThemeResource ListViewItemSelectedPointerOverBackgroundThemeBrush}" SelectedBorderThickness="{ThemeResource GridViewItemCompactSelectedBorderThemeThickness}" SelectedBackground="{ThemeResource ListViewItemSelectedBackgroundThemeBrush}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
+        					<VisualStateManager.VisualStateGroups>
+        						<VisualStateGroup x:Name="CommonStates">
+        							<VisualStateGroup.Transitions>
+        								<VisualTransition GeneratedDuration="0"/>
+        							</VisualStateGroup.Transitions>
+        							<VisualState x:Name="Normal"/>
+        							<VisualState x:Name="PointerOver"/>
+        							<VisualState x:Name="Pressed"/>
+        							<VisualState x:Name="PointerOverPressed"/>
+        							<VisualState x:Name="Disabled"/>
+        						</VisualStateGroup>
+        						<VisualStateGroup x:Name="SelectionStates">
+        							<VisualState x:Name="UnselectedSwiping"/>
+        							<VisualState x:Name="UnselectedPointerOver"/>
+        							<VisualState x:Name="Selecting"/>
+        							<VisualState x:Name="Selected"/>
+        							<VisualState x:Name="SelectedSwiping"/>
+        							<VisualState x:Name="Unselecting"/>
+        							<VisualState x:Name="Unselected"/>
+        							<VisualState x:Name="SelectedUnfocused"/>
+        						</VisualStateGroup>
+        					</VisualStateManager.VisualStateGroups>
+        					<Grid HorizontalAlignment="Left" Height="295" Margin="-148,-145,-147,-145" VerticalAlignment="Top" Width="295">
+        						<Rectangle Fill="#FF003E4B" HorizontalAlignment="Left" Height="275" VerticalAlignment="Top" Width="275" Margin="10,10,0,0"/>
+        						<Image Margin="10,0,10,31" Source="Assets/StartNormalBtn.png" Stretch="Fill"/>
+        						<Rectangle Fill="#F2707070" HorizontalAlignment="Left" Height="53" VerticalAlignment="Top" Width="275" Margin="10,232,0,0"/>
+        						<TextBlock HorizontalAlignment="Left" Height="30" Margin="85,241,0,0" TextWrapping="Wrap" Text="Normal Game" VerticalAlignment="Top" Width="135" FontSize="21.333" FontWeight="Light"/>
+        					</Grid>
+        				</GridViewItemPresenter>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+        <Style x:Key="StartTimedGame" TargetType="GridViewItem">
+        	<Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+        	<Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+        	<Setter Property="Background" Value="Transparent"/>
+        	<Setter Property="TabNavigation" Value="Local"/>
+        	<Setter Property="IsHoldingEnabled" Value="True"/>
+        	<Setter Property="Margin" Value="0,0,2,2"/>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="GridViewItem">
+        				<GridViewItemPresenter CheckHintBrush="{ThemeResource ListViewItemCheckHintThemeBrush}" CheckBrush="{ThemeResource ListViewItemCheckThemeBrush}" ContentMargin="4" ContentTransitions="{TemplateBinding ContentTransitions}" CheckSelectingBrush="{ThemeResource ListViewItemCheckSelectingThemeBrush}" DragForeground="{ThemeResource ListViewItemDragForegroundThemeBrush}" DragOpacity="{ThemeResource ListViewItemDragThemeOpacity}" DragBackground="{ThemeResource ListViewItemDragBackgroundThemeBrush}" DisabledOpacity="{ThemeResource ListViewItemDisabledThemeOpacity}" FocusBorderBrush="{ThemeResource ListViewItemFocusBorderThemeBrush}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" PointerOverBackgroundMargin="1" PlaceholderBackground="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}" PointerOverBackground="{ThemeResource ListViewItemPointerOverBackgroundThemeBrush}" ReorderHintOffset="{ThemeResource ListViewItemReorderHintThemeOffset}" SelectedPointerOverBorderBrush="{ThemeResource ListViewItemSelectedPointerOverBorderThemeBrush}" SelectionCheckMarkVisualEnabled="True" SelectedForeground="{ThemeResource ListViewItemSelectedForegroundThemeBrush}" SelectedPointerOverBackground="{ThemeResource ListViewItemSelectedPointerOverBackgroundThemeBrush}" SelectedBorderThickness="{ThemeResource GridViewItemCompactSelectedBorderThemeThickness}" SelectedBackground="{ThemeResource ListViewItemSelectedBackgroundThemeBrush}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
+        					<Grid HorizontalAlignment="Left" Height="290" Margin="-148,-145,-147,-145" VerticalAlignment="Top" Width="295">
+        						<Rectangle Fill="#F27E7809" HorizontalAlignment="Left" Height="275" Margin="10,7,0,0" VerticalAlignment="Top" Width="275"/>
+        						<Image HorizontalAlignment="Left" Height="270" VerticalAlignment="Top" Width="275" Margin="10,-1,0,0" Source="Assets/StartTimedBtn.png"/>
+        						<Rectangle Fill="#F2707070" HorizontalAlignment="Left" Height="53" VerticalAlignment="Top" Width="275" Margin="10,229,0,0"/>
+        						<TextBlock HorizontalAlignment="Left" Height="24" Margin="92,241,0,0" TextWrapping="Wrap" Text="Time Attack" VerticalAlignment="Top" Width="115" FontSize="21.333" FontWeight="Light"/>
+        					</Grid>
+        				</GridViewItemPresenter>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+        <Style x:Key="StartCustomGame" TargetType="GridViewItem">
+        	<Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+        	<Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+        	<Setter Property="Background" Value="Transparent"/>
+        	<Setter Property="TabNavigation" Value="Local"/>
+        	<Setter Property="IsHoldingEnabled" Value="True"/>
+        	<Setter Property="Margin" Value="0,0,2,2"/>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="GridViewItem">
+        				<GridViewItemPresenter CheckHintBrush="{ThemeResource ListViewItemCheckHintThemeBrush}" CheckBrush="{ThemeResource ListViewItemCheckThemeBrush}" ContentMargin="4" ContentTransitions="{TemplateBinding ContentTransitions}" CheckSelectingBrush="{ThemeResource ListViewItemCheckSelectingThemeBrush}" DragForeground="{ThemeResource ListViewItemDragForegroundThemeBrush}" DragOpacity="{ThemeResource ListViewItemDragThemeOpacity}" DragBackground="{ThemeResource ListViewItemDragBackgroundThemeBrush}" DisabledOpacity="{ThemeResource ListViewItemDisabledThemeOpacity}" FocusBorderBrush="{ThemeResource ListViewItemFocusBorderThemeBrush}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" PointerOverBackgroundMargin="1" PlaceholderBackground="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}" PointerOverBackground="{ThemeResource ListViewItemPointerOverBackgroundThemeBrush}" ReorderHintOffset="{ThemeResource ListViewItemReorderHintThemeOffset}" SelectedPointerOverBorderBrush="{ThemeResource ListViewItemSelectedPointerOverBorderThemeBrush}" SelectionCheckMarkVisualEnabled="True" SelectedForeground="{ThemeResource ListViewItemSelectedForegroundThemeBrush}" SelectedPointerOverBackground="{ThemeResource ListViewItemSelectedPointerOverBackgroundThemeBrush}" SelectedBorderThickness="{ThemeResource GridViewItemCompactSelectedBorderThemeThickness}" SelectedBackground="{ThemeResource ListViewItemSelectedBackgroundThemeBrush}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
+        					<Grid HorizontalAlignment="Left" Height="295" Margin="-148,-145,-147,-145" VerticalAlignment="Top" Width="295">
+        						<Rectangle Fill="#F28F4A05" HorizontalAlignment="Left" Height="275" Margin="10,10,0,0" VerticalAlignment="Top" Width="275"/>
+        						<Image Margin="10,-7,10,27" Source="Assets/StartCustomBtn.png" Stretch="Fill"/>
+        						<Rectangle Fill="#F2707070" HorizontalAlignment="Left" Height="53" VerticalAlignment="Top" Width="275" Margin="10,232,0,0"/>
+        						<TextBlock HorizontalAlignment="Left" Margin="80,0,0,26" TextWrapping="Wrap" Text="Custom Game" FontSize="21.333" FontFamily="Segoe UI" VerticalAlignment="Bottom"/>
+        					</Grid>
+        				</GridViewItemPresenter>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+        <Style x:Key="ButtonStyle1" TargetType="Button">
+        	<Setter Property="Background" Value="{ThemeResource ButtonBackgroundThemeBrush}"/>
+        	<Setter Property="Foreground" Value="{ThemeResource ButtonForegroundThemeBrush}"/>
+        	<Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderThemeBrush}"/>
+        	<Setter Property="BorderThickness" Value="{ThemeResource ButtonBorderThemeThickness}"/>
+        	<Setter Property="Padding" Value="12,4,12,4"/>
+        	<Setter Property="HorizontalAlignment" Value="Left"/>
+        	<Setter Property="VerticalAlignment" Value="Center"/>
+        	<Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+        	<Setter Property="FontWeight" Value="SemiBold"/>
+        	<Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="Button">
+        				<Grid>
+        					<VisualStateManager.VisualStateGroups>
+        						<VisualStateGroup x:Name="CommonStates">
+        							<VisualState x:Name="Normal"/>
+        							<VisualState x:Name="PointerOver">
+        								<Storyboard>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonPointerOverBackgroundThemeBrush}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonPointerOverForegroundThemeBrush}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="Pressed">
+        								<Storyboard>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonPressedBackgroundThemeBrush}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonPressedForegroundThemeBrush}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="Disabled">
+        								<Storyboard>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonDisabledBackgroundThemeBrush}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonDisabledBorderThemeBrush}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonDisabledForegroundThemeBrush}"/>
+        									</ObjectAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        						</VisualStateGroup>
+        						<VisualStateGroup x:Name="FocusStates">
+        							<VisualState x:Name="Focused">
+        								<Storyboard>
+        									<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualWhite"/>
+        									<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualBlack"/>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="Unfocused"/>
+        							<VisualState x:Name="PointerFocused"/>
+        						</VisualStateGroup>
+        					</VisualStateManager.VisualStateGroups>
+        					<Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Margin="3">
+        						<ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        					</Border>
+        					<Rectangle x:Name="FocusVisualWhite" IsHitTestVisible="False" Opacity="0" StrokeDashOffset="1.5" StrokeEndLineCap="Square" Stroke="{ThemeResource FocusVisualWhiteStrokeThemeBrush}" StrokeDashArray="1,1"/>
+        					<Rectangle x:Name="FocusVisualBlack" IsHitTestVisible="False" Opacity="0" StrokeDashOffset="0.5" StrokeEndLineCap="Square" Stroke="{ThemeResource FocusVisualBlackStrokeThemeBrush}" StrokeDashArray="1,1"/>
+        				</Grid>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+        <Style x:Key="StartGameBtn" TargetType="Button">
+        	<Setter Property="Background" Value="{ThemeResource ButtonBackgroundThemeBrush}"/>
+        	<Setter Property="Foreground" Value="{ThemeResource ButtonForegroundThemeBrush}"/>
+        	<Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderThemeBrush}"/>
+        	<Setter Property="BorderThickness" Value="{ThemeResource ButtonBorderThemeThickness}"/>
+        	<Setter Property="Padding" Value="12,4,12,4"/>
+        	<Setter Property="HorizontalAlignment" Value="Left"/>
+        	<Setter Property="VerticalAlignment" Value="Center"/>
+        	<Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+        	<Setter Property="FontWeight" Value="SemiBold"/>
+        	<Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="Button"/>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+        <ControlTemplate x:Key="StartGameBtN" TargetType="Button">
+        	<Viewbox>
+        		<VisualStateManager.VisualStateGroups>
+        			<VisualStateGroup x:Name="CommonStates">
+        				<VisualState x:Name="Normal"/>
+        				<VisualState x:Name="Pressed">
+        					<Storyboard>
+        						<DoubleAnimation Duration="0" To="0.595" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Normal_Mode" d:IsOptimized="True"/>
+        						<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Normal_Mode" d:IsOptimized="True"/>
+        						<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Normal_Mode" d:IsOptimized="True"/>
+        					</Storyboard>
+        				</VisualState>
+        				<VisualState x:Name="Disabled"/>
+        				<VisualState x:Name="PointerOver">
+        					<Storyboard>
+        						<DoubleAnimation Duration="0" To="0.7" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Normal_Mode" d:IsOptimized="True"/>
+        					</Storyboard>
+        				</VisualState>
+        			</VisualStateGroup>
+        		</VisualStateManager.VisualStateGroups>
+        		<Grid x:Name="Normal_Mode" Height="692" Width="522" RenderTransformOrigin="0.5,0.5">
+        			<Grid.RenderTransform>
+        				<CompositeTransform/>
+        			</Grid.RenderTransform>
+        			<Path x:Name="Box_Icon_Normal" Data="F1M1,1C1,1 521,1 521,1 521,1 521,501 521,501 521,501 1,501 1,501 1,501 1,1 1,1z" Stretch="None" Margin="0,0,0,190">
+        				<Path.Fill>
+        					<SolidColorBrush Color="#FF333300" Opacity="0.14901960784313725"/>
+        				</Path.Fill>
+        			</Path>
+        			<Path x:Name="Box_Icon_Normal_Glassed" Data="F1M1,1C1,1 521,1 521,1 521,1 521,501 521,501 521,501 1,501 1,501 1,501 1,1 1,1z" Stretch="None" Margin="0,0,0,190">
+        				<Path.Fill>
+        					<SolidColorBrush Color="#FF333300" Opacity="0.14901960784313725"/>
+        				</Path.Fill>
+        			</Path>
+        			<Image x:Name="Box_Normal" Source="mainMenuScreen_Images/Box_Normal.png" Margin="0,510,0,0"/>
+        			<Image x:Name="Box_Normal_Glassed" Source="mainMenuScreen_Images/Box_Normal_Glassed.png" Margin="0,510,0,0"/>
+        			<Path x:Name="Rect_Norm_Left" Data="F1M1,1C1,1 41,1 41,1 41,1 41,181 41,181 41,181 1,181 1,181 1,181 1,1 1,1z" Fill="#FFFFC30D" Stretch="None" Margin="0,510,480,0"/>
+        			<Path x:Name="Rect_Norm_Right" Data="F1M1,1C1,1 41,1 41,1 41,1 41,181 41,181 41,181 1,181 1,181 1,181 1,1 1,1z" Fill="#FFFFC30D" Stretch="None" Margin="480,510,0,0"/>
+        			<TextBlock x:Name="Normal1" Foreground="#FFF8F8F8" FontSize="50.8" FontFamily="Segoe UI Light" LineStackingStrategy="BlockLineHeight" LineHeight="50.8" TextAlignment="Left" TextWrapping="Wrap" Text="Normal" Margin="168,574,177,67"/>
+        			<Image x:Name="Play_Icon" Opacity="0.8" Source="mainMenuScreen_Images/Play_Icon.png" Margin="222,182,204,372"/>
+        		</Grid>
+        	</Viewbox>
+        </ControlTemplate>
+        <ControlTemplate x:Key="TimedGameStart" TargetType="Button">
+        	<Viewbox Margin="0">
+        		<VisualStateManager.VisualStateGroups>
+        			<VisualStateGroup x:Name="CommonStates">
+        				<VisualState x:Name="Normal"/>
+        				<VisualState x:Name="Pressed">
+        					<Storyboard>
+        						<DoubleAnimation Duration="0" To="0.595" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Time_Attack" d:IsOptimized="True"/>
+        						<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Time_Attack" d:IsOptimized="True"/>
+        						<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Time_Attack" d:IsOptimized="True"/>
+        					</Storyboard>
+        				</VisualState>
+        				<VisualState x:Name="Disabled"/>
+        				<VisualState x:Name="PointerOver">
+        					<Storyboard>
+        						<DoubleAnimation Duration="0" To="0.7" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Time_Attack" d:IsOptimized="True"/>
+        					</Storyboard>
+        				</VisualState>
+        			</VisualStateGroup>
+        		</VisualStateManager.VisualStateGroups>
+        		<Grid x:Name="Time_Attack" Height="692" Width="522" RenderTransformOrigin="0.5,0.5">
+        			<Grid.RenderTransform>
+        				<CompositeTransform/>
+        			</Grid.RenderTransform>
+        			<Path x:Name="Box_Icon_Time_Attack" Data="F1M1,1C1,1 521,1 521,1 521,1 521,501 521,501 521,501 1,501 1,501 1,501 1,1 1,1z" Stretch="None" Margin="0,0,0,190">
+        				<Path.Fill>
+        					<SolidColorBrush Color="#FF333300" Opacity="0.14901960784313725"/>
+        				</Path.Fill>
+        			</Path>
+        			<Path x:Name="Box_Icon_Time_Attack_Glassed" Data="F1M1,1C1,1 521,1 521,1 521,1 521,501 521,501 521,501 1,501 1,501 1,501 1,1 1,1z" Stretch="None" Margin="0,0,0,190">
+        				<Path.Fill>
+        					<SolidColorBrush Color="#FF333300" Opacity="0.14901960784313725"/>
+        				</Path.Fill>
+        			</Path>
+        			<Image x:Name="Box_Time_Attack" Source="mainMenuScreen_Images/Box_Time_Attack.png" Margin="0,510,0,0"/>
+        			<Image x:Name="Box_Time_Attack_Glassed" Source="mainMenuScreen_Images/Box_Time_Attack_Glassed.png" Margin="0,510,0,0"/>
+        			<Path x:Name="Rect_TimAtt_Left" Data="F1M1,1C1,1 41,1 41,1 41,1 41,181 41,181 41,181 1,181 1,181 1,181 1,1 1,1z" Fill="#FF00ABA9" Stretch="None" Margin="0,510,480,0"/>
+        			<Path x:Name="Rect_TimAtt_Right" Data="F1M1,1C1,1 41,1 41,1 41,1 41,181 41,181 41,181 1,181 1,181 1,181 1,1 1,1z" Fill="#FF00ABA9" Stretch="None" Margin="480,510,0,0"/>
+        			<TextBlock x:Name="Time_Attack1" Foreground="#FFF8F8F8" FontSize="50.8" FontFamily="Segoe UI Light" LineStackingStrategy="BlockLineHeight" LineHeight="50.8" TextAlignment="Left" TextWrapping="Wrap" Text="Time Attack" Margin="139,574.096,104,67.104"/>
+        			<Image x:Name="Clock_Icon" Opacity="0.8" Source="mainMenuScreen_Images/Clock_Icon.png" Margin="182,181,202,373"/>
+        		</Grid>
+        	</Viewbox>
+        </ControlTemplate>
+        <ControlTemplate x:Key="StatisticsBtn" TargetType="Button">
+        	<Viewbox Margin="0">
+        		<VisualStateManager.VisualStateGroups>
+        			<VisualStateGroup x:Name="CommonStates">
+        				<VisualState x:Name="Normal"/>
+        				<VisualState x:Name="Pressed">
+        					<Storyboard>
+        						<DoubleAnimation Duration="0" To="0.595" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Statistics1" d:IsOptimized="True"/>
+        						<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Statistics1" d:IsOptimized="True"/>
+        						<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Statistics1" d:IsOptimized="True"/>
+        					</Storyboard>
+        				</VisualState>
+        				<VisualState x:Name="Disabled"/>
+        				<VisualState x:Name="PointerOver">
+        					<Storyboard>
+        						<DoubleAnimation Duration="0" To="0.7" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Statistics1" d:IsOptimized="True"/>
+        					</Storyboard>
+        				</VisualState>
+        			</VisualStateGroup>
+        		</VisualStateManager.VisualStateGroups>
+        		<Grid x:Name="Statistics1" Height="692" Width="522" RenderTransformOrigin="0.5,0.5">
+        			<Grid.RenderTransform>
+        				<CompositeTransform/>
+        			</Grid.RenderTransform>
+        			<Path x:Name="Box_Icon_Statistics" Data="F1M1,1C1,1 521,1 521,1 521,1 521,501 521,501 521,501 1,501 1,501 1,501 1,1 1,1z" Stretch="None" Margin="0,0,0,190">
+        				<Path.Fill>
+        					<SolidColorBrush Color="#FF333300" Opacity="0.14901960784313725"/>
+        				</Path.Fill>
+        			</Path>
+        			<Path x:Name="Box_Icon_Statistics_Glassed" Data="F1M1,1C1,1 521,1 521,1 521,1 521,501 521,501 521,501 1,501 1,501 1,501 1,1 1,1z" Stretch="None" Margin="0,0,0,190">
+        				<Path.Fill>
+        					<SolidColorBrush Color="#FF333300" Opacity="0.14901960784313725"/>
+        				</Path.Fill>
+        			</Path>
+        			<Image x:Name="Box_Statistics" Source="mainMenuScreen_Images/Box_Statistics.png" Margin="0,510,0,0"/>
+        			<Image x:Name="Box_Statistics_Glassed" Source="mainMenuScreen_Images/Box_Statistics_Glassed.png" Margin="0,510,0,0"/>
+        			<Path x:Name="Rect_Stat_Left" Data="F1M1,1C1,1 41,1 41,1 41,1 41,181 41,181 41,181 1,181 1,181 1,181 1,1 1,1z" Fill="#FF7D3777" Stretch="None" Margin="0,510,480,0"/>
+        			<Path x:Name="Rect_Stat_Right" Data="F1M1,1C1,1 41,1 41,1 41,1 41,181 41,181 41,181 1,181 1,181 1,181 1,1 1,1z" Fill="#FF7D3777" Stretch="None" Margin="480,510,0,0"/>
+        			<TextBlock x:Name="Statistics2" Foreground="#FFF8F8F8" FontSize="50.8" FontFamily="Segoe UI Light" LineStackingStrategy="BlockLineHeight" LineHeight="50.8" TextAlignment="Left" TextWrapping="Wrap" Text="Statistics" Margin="165,574.096,145.5,67.104"/>
+        			<Image x:Name="Stat_Icon" Opacity="0.8" Source="mainMenuScreen_Images/Stat_Icon.png" Margin="181,172,163,363"/>
+        		</Grid>
+        	</Viewbox>
+        </ControlTemplate>
+        <ControlTemplate x:Key="StatisticsTemplate" TargetType="Button">
+        	<Viewbox Margin="0" Width="522" Height="692">
+        		<Grid x:Name="Statistics1" Height="692" Width="522">
+        			<Path x:Name="Box_Icon_Statistics" Data="M1,1.37849 C1,1.37849 521,1.37849 521,1.37849 C521,1.37849 521,690.622 521,690.622 C521,690.622 1,690.622 1,690.622 C1,690.622 1,1.37849 1,1.37849 z" Stretch="None" UseLayoutRounding="False">
+        				<Path.Fill>
+        					<SolidColorBrush Color="#FF333300" Opacity="0.14901960784313725"/>
+        				</Path.Fill>
+        			</Path>
+        			<Path x:Name="Box_Icon_Statistics_Glassed" Data="M1,1.37849 C1,1.37849 521,1.37849 521,1.37849 C521,1.37849 521,690.622 521,690.622 C521,690.622 1,690.622 1,690.622 C1,690.622 1,1.37849 1,1.37849 z" Stretch="None" UseLayoutRounding="False">
+        				<Path.Fill>
+        					<SolidColorBrush Color="#FF333300" Opacity="0.14901960784313725"/>
+        				</Path.Fill>
+        			</Path>
+        			<TextBlock HorizontalAlignment="Left" Height="45" Margin="40,45,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="405"/>
+        			<TextBlock HorizontalAlignment="Left" Height="45" Margin="40,100,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="405"/>
+        			<TextBlock HorizontalAlignment="Left" Height="45" Margin="40,150,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="405"/>
+        			<TextBlock HorizontalAlignment="Left" Height="45" Margin="40,195,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="405"/>
+        		</Grid>
+        	</Viewbox>
+        </ControlTemplate>
+        <Style x:Key="ButtonStyle2" TargetType="Button">
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="Button">
+        				<Viewbox>
+        					<VisualStateManager.VisualStateGroups>
+        						<VisualStateGroup x:Name="CommonStates">
+        							<VisualState x:Name="Normal"/>
+        							<VisualState x:Name="Pressed">
+        								<Storyboard>
+        									<DoubleAnimation Duration="0" To="0.595" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="StatisticsTileNormalnoBG" d:IsOptimized="True"/>
+        									<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="StatisticsTileNormalnoBG" d:IsOptimized="True"/>
+        									<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="StatisticsTileNormalnoBG" d:IsOptimized="True"/>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="Disabled"/>
+        							<VisualState x:Name="PointerOver">
+        								<Storyboard>
+        									<DoubleAnimation Duration="0" To="0.7" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="StatisticsTileNormalnoBG" d:IsOptimized="True"/>
+        								</Storyboard>
+        							</VisualState>
+        						</VisualStateGroup>
+        					</VisualStateManager.VisualStateGroups>
+        					<Grid x:Name="StatisticsTileNormalnoBG" UseLayoutRounding="False" RenderTransformOrigin="0.5,0.5" Height="692" Width="520">
+        						<Grid.Clip>
+        							<RectangleGeometry Rect="0,0,520,690"/>
+        						</Grid.Clip>
+        						<Grid.RenderTransform>
+        							<CompositeTransform/>
+        						</Grid.RenderTransform>
+        						<Canvas x:Name="Box" Margin="-1,-1,-1,1">
+        							<Path x:Name="Statistic_Normal" Width="522" Canvas.Top="0" Stretch="None" Canvas.Left="0" Height="692" Data="F1M1,1C1,1 521,1 521,1 521,1 521,691 521,691 521,691 1,691 1,691 1,691 1,1 1,1z">
+        								<Path.Fill>
+        									<SolidColorBrush Color="White" Opacity="0.14901960784313725"/>
+        								</Path.Fill>
+        							</Path>
+        							<Path x:Name="Statistic_Normal_Glassed" Width="522" Canvas.Top="0" Stretch="None" Canvas.Left="0" Height="692" Data="F1M1,1C1,1 521,1 521,1 521,1 521,691 521,691 521,691 1,691 1,691 1,691 1,1 1,1z">
+        								<Path.Fill>
+        									<SolidColorBrush Color="#FF67673D" Opacity="0.14901960784313725"/>
+        								</Path.Fill>
+        							</Path><TextBlock x:Name="TotalQuestions" Canvas.Top="117.4" Text="0" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="249" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="TotalCorrect" Canvas.Top="137.4" Text="0" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="211" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="TotalIncorrect" Canvas.Top="157.4" Text="0" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="226" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="LastCorrect" Canvas.Top="277.4" Text="0" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="161" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="LastIncorrect" Canvas.Top="297.4" Text="0" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="175" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="LastScore" Canvas.Top="317.4" Text="0" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="63" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="HighestScore" Canvas.Top="77.4" Text="0" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="140" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Score_" Canvas.Top="317.4" Text="Score:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="-1" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Incorrect_Answers_" Canvas.Top="297.4" Text="Incorrect Answers:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="-1" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Correct_Answers_" Canvas.Top="277.4" Text="Correct Answers:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="-1" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Total_Incorrect_Answers_" Canvas.Top="157.4" Text="Total Incorrect Answers:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="0" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Total_Correct_Answers_" Canvas.Top="137.4" Text="Total Correct Answers:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="0" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Total_Questions_Answered_" Canvas.Top="117.4" Text="Total Questions Answered:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="0" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Highest_Score_" Canvas.Top="77.4" Text="Highest Score:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="-1" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Normal1" Canvas.Top="2.04" Text="Normal" TextWrapping="Wrap" TextAlignment="Left" LineHeight="42" Canvas.Left="-3" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="42" Foreground="#FFFAFAFA"/>
+        						</Canvas>
+        						<ContentPresenter Margin="40,290,347.993,368.4"/>
+        					</Grid>
+        				</Viewbox>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        	<Setter Property="FontFamily" Value="Segoe UI Light"/>
+        	<Setter Property="FontSize" Value="28"/>
+        	<Setter Property="Foreground" Value="#FFFAFAFA"/>
+        </Style>
+        <Style x:Key="ButtonStyle3" TargetType="Button">
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="Button">
+        				<Viewbox>
+        					<VisualStateManager.VisualStateGroups>
+        						<VisualStateGroup x:Name="CommonStates">
+        							<VisualState x:Name="Normal"/>
+        							<VisualState x:Name="Pressed">
+        								<Storyboard>
+        									<DoubleAnimation Duration="0" To="0.595" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="StatisticsTileTimeAttackNoBG" d:IsOptimized="True"/>
+        									<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="StatisticsTileTimeAttackNoBG" d:IsOptimized="True"/>
+        									<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="StatisticsTileTimeAttackNoBG" d:IsOptimized="True"/>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="Disabled"/>
+        							<VisualState x:Name="PointerOver">
+        								<Storyboard>
+        									<DoubleAnimation Duration="0" To="0.7" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="StatisticsTileTimeAttackNoBG" d:IsOptimized="True"/>
+        								</Storyboard>
+        							</VisualState>
+        						</VisualStateGroup>
+        					</VisualStateManager.VisualStateGroups>
+        					<Grid x:Name="StatisticsTileTimeAttackNoBG" UseLayoutRounding="False" RenderTransformOrigin="0.5,0.5" Height="692" Width="520">
+        						<Grid.Clip>
+        							<RectangleGeometry Rect="0,0,520,690"/>
+        						</Grid.Clip>
+        						<Grid.RenderTransform>
+        							<CompositeTransform/>
+        						</Grid.RenderTransform>
+        						<Canvas x:Name="Box1" Margin="-1,-1,-1,1">
+        							<Path x:Name="Statistic_TimeAttack" Width="522" Canvas.Top="0" Stretch="None" Canvas.Left="0" Height="692" Data="F1M1,1C1,1 521,1 521,1 521,1 521,691 521,691 521,691 1,691 1,691 1,691 1,1 1,1z">
+        								<Path.Fill>
+        									<SolidColorBrush Color="White" Opacity="0.14901960784313725"/>
+        								</Path.Fill>
+        							</Path>
+        							<Path x:Name="Statistic_TimeAttack_Glassed" Width="522" Canvas.Top="0" Stretch="None" Canvas.Left="0" Height="692" Data="F1M1,1C1,1 521,1 521,1 521,1 521,691 521,691 521,691 1,691 1,691 1,691 1,1 1,1z">
+        								<Path.Fill>
+        									<SolidColorBrush Color="#FF727D6B" Opacity="0.14901960784313725"/>
+        								</Path.Fill>
+        							</Path>
+        						</Canvas>
+        						<Canvas x:Name="Text1" Margin="38,68,124,207">
+        							<TextBlock x:Name="Fastest_time_to_answer_a_question_correctly_" Canvas.Top="397.4" Text="Fastest time to answer a question correctly:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="0.939" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Score_1" Canvas.Top="317.4" Text="Total Question:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="1" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Incorrect_Answers_1" Canvas.Top="297.4" Text="Incorrect Answers:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="1" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Correct_Answers_1" Canvas.Top="277.4" Text="Correct Answers:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="1" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Total_Incorrect_Answers_1" Canvas.Top="157.4" Text="Total Incorrect Answers:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="2" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Total_Correct_Answers_1" Canvas.Top="137.4" Text="Total Correct Answers:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="2" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Total_Questions_Answered_1" Canvas.Top="117.4" Text="Total Questions Answered:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="2" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Highest_Score_1" Canvas.Top="77" Text="Highest Score:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="2" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Time_Attack" Canvas.Top="2.04" Text="Time Attack" TextWrapping="Wrap" TextAlignment="Left" LineHeight="42" Canvas.Left="-1" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="42" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Highest_Score_" Canvas.Top="77" Text="{Binding HighScoreTimed}" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="140" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Highest_Score__Copy" Canvas.Top="117.4" Text="{Binding TimedTotalQ}" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="249" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Highest_Score__Copy1" Canvas.Top="137.4" Text="{Binding TimedTotalCorrect}" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="211" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Highest_Score__Copy2" Canvas.Top="157.4" Text="{Binding TimedTotalIncorrect}" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="226" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Highest_Score__Copy3" Canvas.Top="277.4" Text="{Binding TimedLastCorrect}" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="162" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Highest_Score__Copy4" Canvas.Top="297.4" Text="{Binding TimedLastIncorrect}" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="176" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Highest_Score__Copy5" Canvas.Top="317.4" Text="{Binding TimedLastQ}" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="146" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Highest_Score__Copy6" Canvas.Top="422" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="2" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA" Text="{Binding Fastest_time}"/>
+        						</Canvas>
+        						<ContentPresenter Margin="38,295,349.993,363.4"/>
+        					</Grid>
+        				</Viewbox>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        	<Setter Property="FontFamily" Value="Segoe UI Light"/>
+        	<Setter Property="FontSize" Value="28"/>
+        	<Setter Property="Foreground" Value="#FFFAFAFA"/>
+        </Style>
+        <Storyboard x:Name="AnimateMainMenu" RepeatBehavior="Forever">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="image">
+        		<EasingDoubleKeyFrame KeyTime="0:0:10" Value="-100"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:20" Value="0"/>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Style x:Key="NormalStats" TargetType="Button">
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="Button">
+        				<Viewbox>
+        					<VisualStateManager.VisualStateGroups>
+        						<VisualStateGroup x:Name="CommonStates">
+        							<VisualState x:Name="Normal"/>
+        							<VisualState x:Name="Pressed">
+        								<Storyboard>
+        									<DoubleAnimation Duration="0" To="0.595" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="StatisticsTileTimeAttackNoBG" d:IsOptimized="True"/>
+        									<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="StatisticsTileTimeAttackNoBG" d:IsOptimized="True"/>
+        									<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="StatisticsTileTimeAttackNoBG" d:IsOptimized="True"/>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="Disabled"/>
+        							<VisualState x:Name="PointerOver">
+        								<Storyboard>
+        									<DoubleAnimation Duration="0" To="0.7" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="StatisticsTileTimeAttackNoBG" d:IsOptimized="True"/>
+        								</Storyboard>
+        							</VisualState>
+        						</VisualStateGroup>
+        					</VisualStateManager.VisualStateGroups>
+        					<Grid x:Name="StatisticsTileTimeAttackNoBG" UseLayoutRounding="False" RenderTransformOrigin="0.5,0.5" Height="692" Width="520">
+        						<Grid.Clip>
+        							<RectangleGeometry Rect="0,0,520,690"/>
+        						</Grid.Clip>
+        						<Grid.RenderTransform>
+        							<CompositeTransform/>
+        						</Grid.RenderTransform>
+        						<Canvas x:Name="Box1" Margin="-1,-1,-1,1">
+        							<Path x:Name="Statistic_TimeAttack" Width="522" Canvas.Top="0" Stretch="None" Canvas.Left="0" Height="692" Data="F1M1,1C1,1 521,1 521,1 521,1 521,691 521,691 521,691 1,691 1,691 1,691 1,1 1,1z">
+        								<Path.Fill>
+        									<SolidColorBrush Color="White" Opacity="0.14901960784313725"/>
+        								</Path.Fill>
+        							</Path>
+        							<Path x:Name="Statistic_TimeAttack_Glassed" Width="522" Canvas.Top="0" Stretch="None" Canvas.Left="0" Height="692" Data="F1M1,1C1,1 521,1 521,1 521,1 521,691 521,691 521,691 1,691 1,691 1,691 1,1 1,1z">
+        								<Path.Fill>
+        									<SolidColorBrush Color="#FF727D6B" Opacity="0.14901960784313725"/>
+        								</Path.Fill>
+        							</Path>
+        						</Canvas>
+        						<Canvas x:Name="Text1" Margin="38,68,124,207">
+        							<TextBlock x:Name="Score_1" Canvas.Top="317.4" Text="Questions answered:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="1" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Incorrect_Answers_1" Canvas.Top="297.4" Text="Incorrect Answers:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="1" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Correct_Answers_1" Canvas.Top="277.4" Text="Correct Answers:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="1" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Total_Incorrect_Answers_1" Canvas.Top="157.4" Text="Total Incorrect Answers:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="2" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Total_Correct_Answers_1" Canvas.Top="137.4" Text="Total Correct Answers:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="2" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Total_Questions_Answered_1" Canvas.Top="117.4" Text="Total Questions Answered:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="2" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Highest_Score_1" Canvas.Top="77" Text="Highest Score:" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="2" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Time_Attack" Canvas.Top="2.04" Text="Normal" TextWrapping="Wrap" TextAlignment="Left" LineHeight="42" Canvas.Left="-1" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="42" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Highest_Score_" Canvas.Top="77" Text="{Binding HighScoreNormal}" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="140" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Highest_Score__Copy" Canvas.Top="117.4" Text="{Binding NormalTotalQ}" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="249" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Highest_Score__Copy1" Canvas.Top="137.4" Text="{Binding NormalTotalCorrect}" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="211" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Highest_Score__Copy2" Canvas.Top="157.4" Text="{Binding NormalTotalIncorrect}" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="226" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Highest_Score__Copy3" Canvas.Top="277.4" Text="{Binding NormalLastCorrect}" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="162" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Highest_Score__Copy4" Canvas.Top="297.4" Text="{Binding NormalLastIncorrect}" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="176" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        							<TextBlock x:Name="Highest_Score__Copy5" Canvas.Top="317.4" Text="{Binding NormalLastQ}" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="197" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+        						</Canvas>
+        						<ContentPresenter Margin="38,295,349.993,363.4"/>
+        					</Grid>
+        				</Viewbox>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        	<Setter Property="FontFamily" Value="Segoe UI Light"/>
+        	<Setter Property="FontSize" Value="28"/>
+        	<Setter Property="Foreground" Value="#FFFAFAFA"/>
+        </Style>
+    </Page.Resources>
+	<ScrollViewer x:Name="MainScrollViewer" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalScrollMode="Disabled" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" IsVerticalRailEnabled="False" IsVerticalScrollChainingEnabled="False" IsHorizontalScrollChainingEnabled="False" IsHorizontalRailEnabled="False" HorizontalSnapPointsType="None" VerticalSnapPointsType="None" ZoomSnapPointsType="None" Background="{x:Null}" ZoomMode="Disabled" MaxZoomFactor="1" MinZoomFactor="1">
+		<Viewbox Height="{Binding Height, ElementName=pageRoot}">
+			<Grid x:Name="MainMenu1" Height="1080" Width="3004">
+				<Grid.ChildrenTransitions>
+		 <TransitionCollection> 
+             <EntranceThemeTransition/>
+         </TransitionCollection>
+				</Grid.ChildrenTransitions>
+				<Image x:Name="image" HorizontalAlignment="Left" VerticalAlignment="Top" Source="mainMenuScreen_Images/Background_Long.jpg" Margin="-379,0,-1079,-175" Stretch="UniformToFill" Width="4462" RenderTransformOrigin="0.5,0.5">
+					<Image.RenderTransform>
+						<CompositeTransform/>
+					</Image.RenderTransform>
+				</Image>
+				<TextBlock x:Name="BeQuizzed" Foreground="#FFF8F8F8" FontSize="64" FontFamily="Segoe UI Light" LineStackingStrategy="BlockLineHeight" LineHeight="101.59999" TextAlignment="Left" TextWrapping="Wrap" Text="BeQuizzed" Margin="120,25,2385,953" FontWeight="ExtraLight"/>
+				<TextBlock x:Name="Start_game" Foreground="#FFF8F8F8" FontSize="48" FontFamily="Segoe UI Light" LineStackingStrategy="BlockLineHeight" LineHeight="50.8" TextAlignment="Left" TextWrapping="Wrap" Text="Start game" Margin="120,149,2636,880" FontWeight="ExtraLight"/>
+				<Button x:ConnectionId='1' x:Name="StartGameBtn" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,200,0,0" Style="{StaticResource StartGameBtn}" Template="{StaticResource StartGameBtN}"                            Height="570" Width="430"/>
+				<Button x:ConnectionId='2' x:Name="TimedGameStartBtn" Content="Button" HorizontalAlignment="Left" Height="570" Margin="585,200,0,0" VerticalAlignment="Top" Template="{StaticResource TimedGameStart}" Width="430"                                />
+				<TextBlock x:Name="Statistics" Foreground="#FFF8F8F8" FontSize="48" FontFamily="Segoe UI Light" LineStackingStrategy="BlockLineHeight" LineHeight="50.8" TextAlignment="Left" TextWrapping="Wrap" Text="Statistics" Margin="1140,149,1639,880" FontWeight="ExtraLight"/>
+				<Button x:ConnectionId='3' x:Name="StatisticsBtn" HorizontalAlignment="Left" Height="570" Margin="1140,200,0,0" VerticalAlignment="Top" Width="430" Template="{StaticResource StatisticsBtn}"                  />
+				<Button Content="Last Game" HorizontalAlignment="Left" Height="570" Margin="2047,200,0,0" Style="{StaticResource ButtonStyle3}" VerticalAlignment="Top" Width="428"/>
+				<MediaElement x:Name="SfxClick" HorizontalAlignment="Left" Height="100" Margin="36.479,1601,0,-621" VerticalAlignment="Top" Width="100" Source="Sfx/Sfx_Click.mp3" RenderTransformOrigin="0.5,0.5" AutoPlay="False">
+					<MediaElement.RenderTransform>
+						<CompositeTransform/>
+					</MediaElement.RenderTransform>
+				</MediaElement>
+				<Button Content="Last Game" HorizontalAlignment="Left" Height="570" Margin="1596,200,0,0" Style="{StaticResource NormalStats}" VerticalAlignment="Top" Width="428"/>
+			</Grid>
+		</Viewbox>
+	</ScrollViewer>
+
+    <!--
+        This grid acts as a root panel for the page that defines two rows:
+        * Row 0 contains the back button and page title
+        * Row 1 contains the rest of the page layout
+    -->
+</Page>
+

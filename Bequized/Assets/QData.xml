@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Query_Library>
+  <Query id ="0">
+    <Category>Biology</Category>
+    <Question>How many youngs does a mare usually have</Question>
+    <Right_Ans>1</Right_Ans>
+    <Wrong_AnsA>2</Wrong_AnsA>
+    <Wrong_AnsB>5</Wrong_AnsB>
+    <Wrong_AnsC>4</Wrong_AnsC>
+  </Query>
+  <Query id ="1">
+    <Category>Science</Category>
+    <Question>What country Albert Einsten was born in</Question>
+    <Right_Ans>Germany</Right_Ans>
+    <Wrong_AnsA>America</Wrong_AnsA>
+    <Wrong_AnsB>Switcherland</Wrong_AnsB>
+    <Wrong_AnsC>France</Wrong_AnsC>
+  </Query>
+  <Query id ="2">
+    <Category>History</Category>
+    <Question>What material was the Trojan Horse made of</Question>
+    <Right_Ans>Wood</Right_Ans>
+    <Wrong_AnsA>Rock</Wrong_AnsA>
+    <Wrong_AnsB>Metal</Wrong_AnsB>
+    <Wrong_AnsC>Ice</Wrong_AnsC>
+  </Query>
+  <Query id ="3">
+    <Category>Sports</Category>
+    <Question>How many referees supervise in a basketball game(not NBA)</Question>
+    <Right_Ans>2</Right_Ans>
+    <Wrong_AnsA>3</Wrong_AnsA>
+    <Wrong_AnsB>1</Wrong_AnsB>
+    <Wrong_AnsC>6</Wrong_AnsC>
+  </Query>
+  <Query id ="4">
+    <Category>Science</Category>
+    <Question>What is the ingredient that makes soda fizz</Question>
+    <Right_Ans>Carbon Dioxide</Right_Ans>
+    <Wrong_AnsA>Oxygen</Wrong_AnsA>
+    <Wrong_AnsB>Carbon Monoxide</Wrong_AnsB>
+    <Wrong_AnsC>Nitrogen Dioxide</Wrong_AnsC>
+  </Query>
+  <Query id ="5">
+    <Category>Geography</Category>
+    <Question>How tall is Mt. Everest</Question>
+    <Right_Ans>8,848m</Right_Ans>
+    <Wrong_AnsA>7,023m</Wrong_AnsA>
+    <Wrong_AnsB>5,024m</Wrong_AnsB>
+    <Wrong_AnsC>9,328m</Wrong_AnsC>
+  </Query>
+</Query_Library>

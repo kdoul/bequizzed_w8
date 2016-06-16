@@ -1,0 +1,1007 @@
+﻿<Page x:ConnectionId='1'
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Bequized"
+	xmlns:src="using:Quizgame"
+    xmlns:common="using:Bequized.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="pageRoot"
+    x:Class="Bequized.MainGame"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
+    mc:Ignorable="d"                                                        >
+
+    <Page.Resources>
+	
+    	<x:String x:Key="AppName">My Application</x:String>
+    	<ControlTemplate x:Key="ButtonATemplate" TargetType="Button">
+    		<Viewbox Margin="0" Stretch="Fill" >
+    			<VisualStateManager.VisualStateGroups>
+    				<VisualStateGroup x:Name="CommonStates1">
+    					<VisualState x:Name="Normal1"/>
+    					<VisualState x:Name="Pressed1"/>
+    					<VisualState x:Name="Disabled1"/>
+    					<VisualState x:Name="PointerOver1"/>
+    				</VisualStateGroup>
+    				<VisualStateGroup x:Name="FocusStates1">
+    					<VisualState x:Name="Unfocused1"/>
+    					<VisualState x:Name="Focused1"/>
+    					<VisualState x:Name="PointerFocused1"/>
+    					<VisualState x:Name="CorrectA">
+    						<Storyboard>
+    							<ColorAnimation Duration="0" To="Green" Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Button_A" d:IsOptimized="True"/>
+    						</Storyboard>
+    					</VisualState>
+    				</VisualStateGroup>
+    				<VisualStateGroup x:Name="CommonStates">
+    					<VisualState x:Name="Normal"/>
+    					<VisualState x:Name="Pressed">
+    						<Storyboard>
+    							<PointAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)" EnableDependentAnimation="True" Storyboard.TargetName="Button_A">
+    								<EasingPointKeyFrame KeyTime="0" Value="0.5,0.5"/>
+    							</PointAnimationUsingKeyFrames>
+    							<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Button_A" d:IsOptimized="True"/>
+    							<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Button_A" d:IsOptimized="True"/>
+    							<DoubleAnimation Duration="0" To="0.6" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Button_A" d:IsOptimized="True"/>
+    						</Storyboard>
+    					</VisualState>
+    					<VisualState x:Name="Disabled"/>
+    					<VisualState x:Name="PointerOver">
+    						<Storyboard>
+    							<DoubleAnimation Duration="0" To="0.7" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Button_A" d:IsOptimized="True"/>
+    						</Storyboard>
+    					</VisualState>
+    				</VisualStateGroup>
+    			</VisualStateManager.VisualStateGroups>
+    			<Canvas x:Name="Button_A" RenderTransformOrigin="0.5,0.5" Background="#01000000" Height="253" Width="783" >
+    				<Canvas.Resources>
+    					<Storyboard x:Name="MakeAGreen">
+    						<ColorAnimation Duration="0" To="#99008000" Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Button_A" d:IsOptimized="True"/>
+    					</Storyboard>
+    					<Storyboard x:Name="MakeARed">
+    						<ColorAnimation Duration="0" To="#99FF0000" Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Button_A" d:IsOptimized="True"/>
+    					</Storyboard>
+    				</Canvas.Resources>
+    				<Canvas.Projection>
+    					<PlaneProjection/>
+    				</Canvas.Projection>
+    				<Canvas.RenderTransform>
+    					<CompositeTransform/>
+    				</Canvas.RenderTransform>
+    				<Image x:Name="Main_Rect_Glass6" Source="mainGameScreen_Images/Main_Rect_Glass1.png" Height="253" Width="783"/>
+    				<Image x:Name="Main_Rect_Glass7" Source="mainGameScreen_Images/Main_Rect_Glass.png" Height="253" Width="783"/>
+    				<Image x:Name="Colour_Rect3" Source="mainGameScreen_Images/Colour_Rect.png" Height="253" Width="53"/>
+    				<TextBlock x:Name="AnsAContainer" Foreground="White" FontSize="45.72" FontFamily="Segoe UI Light" LineStackingStrategy="BlockLineHeight" LineHeight="45.72" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding ansA, UpdateSourceTrigger=PropertyChanged}" Height="181.264" Canvas.Left="111" Canvas.Top="37.486" Width="631.5"/>
+    				<TextBlock x:Name="A" Foreground="White" FontSize="35.56" FontFamily="Segoe UI Light" LineStackingStrategy="BlockLineHeight" LineHeight="35.56" TextAlignment="Left" TextWrapping="Wrap" Text="A" Height="35.56" Canvas.Left="49" Canvas.Top="112.267" Width="23.874"/>
+    			</Canvas>
+    		</Viewbox>
+    	</ControlTemplate>
+    	<ControlTemplate x:Key="ButtonBTemplate" TargetType="Button">
+    		<Viewbox Margin="0" Stretch="Fill" >
+    			<VisualStateManager.VisualStateGroups>
+    				<VisualStateGroup x:Name="CommonStates">
+    					<VisualState x:Name="Normal"/>
+    					<VisualState x:Name="Pressed">
+    						<Storyboard>
+    							<DoubleAnimation Duration="0" To="0.595" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Button_B" d:IsOptimized="True"/>
+    							<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Button_B" d:IsOptimized="True"/>
+    							<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Button_B" d:IsOptimized="True"/>
+    						</Storyboard>
+    					</VisualState>
+    					<VisualState x:Name="Disabled"/>
+    					<VisualState x:Name="PointerOver">
+    						<Storyboard>
+    							<DoubleAnimation Duration="0" To="0.7" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Button_B" d:IsOptimized="True"/>
+    						</Storyboard>
+    					</VisualState>
+    				</VisualStateGroup>
+    			</VisualStateManager.VisualStateGroups>
+    			<Canvas x:Name="Button_B" RenderTransformOrigin="0.5,0.5" Background="#00000000" Height="255" Width="783">
+    				<Canvas.Resources>
+    					<Storyboard x:Name="MakeBGreen">
+    						<ColorAnimation Duration="0" To="#99008000" Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Button_B" d:IsOptimized="True"/>
+    					</Storyboard>
+    					<Storyboard x:Name="MakeBRed">
+    						<ColorAnimation Duration="0" To="#9AFF0000" Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Button_B" d:IsOptimized="True"/>
+    					</Storyboard>
+    				</Canvas.Resources>
+    				<Canvas.RenderTransform>
+    					<CompositeTransform/>
+    				</Canvas.RenderTransform>
+    				<Image x:Name="Main_Rect_Glass4" Height="253" Canvas.Left="0" Source="mainGameScreen_Images/Main_Rect_Glass3.png" Canvas.Top="0" Width="783"/>
+    				<Image x:Name="Main_Rect_Glass5" Height="253" Canvas.Left="0" Source="mainGameScreen_Images/Main_Rect_Glass2.png" Canvas.Top="0" Width="783"/>
+    				<Image x:Name="Colour_Rect2" Height="253" Canvas.Left="730" Source="mainGameScreen_Images/Colour_Rect1.png" Canvas.Top="0" Width="53"/>
+    				<TextBlock x:Name="AndBContainter" Foreground="White" FontSize="45.72" FontFamily="Segoe UI Light" LineStackingStrategy="BlockLineHeight" Canvas.Left="57" LineHeight="45.72" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding ansB, UpdateSourceTrigger=PropertyChanged}" Canvas.Top="43.486"/>
+    				<TextBlock x:Name="B" Foreground="White" FontSize="35.56" FontFamily="Segoe UI Light" LineStackingStrategy="BlockLineHeight" Canvas.Left="713" LineHeight="35.56" TextAlignment="Left" TextWrapping="Wrap" Text="B" Canvas.Top="109.267"/>
+    			</Canvas>
+    		</Viewbox>
+    	</ControlTemplate>
+    	<ControlTemplate x:Key="SelectAnsCTemplate" TargetType="Button">
+    		<Canvas x:Name="Button_C" Margin="0" RenderTransformOrigin="0.5,0.5" Background="#00000000">
+    			<Canvas.Resources>
+    				<Storyboard x:Name="MakeCGreen">
+    					<ColorAnimation Duration="0" To="#99008000" Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Button_C" d:IsOptimized="True"/>
+    				</Storyboard>
+    				<Storyboard x:Name="MakeCRed">
+    					<ColorAnimation Duration="0" To="#99FF0000" Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Button_C" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</Canvas.Resources>
+    			<Canvas.RenderTransform>
+    				<CompositeTransform/>
+    			</Canvas.RenderTransform>
+    			<VisualStateManager.VisualStateGroups>
+    				<VisualStateGroup x:Name="CommonStates">
+    					<VisualState x:Name="Normal"/>
+    					<VisualState x:Name="Pressed">
+    						<Storyboard>
+    							<DoubleAnimation Duration="0" To="0.595" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Button_C" d:IsOptimized="True"/>
+    							<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Button_C" d:IsOptimized="True"/>
+    							<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Button_C" d:IsOptimized="True"/>
+    						</Storyboard>
+    					</VisualState>
+    					<VisualState x:Name="Disabled"/>
+    					<VisualState x:Name="PointerOver">
+    						<Storyboard>
+    							<DoubleAnimation Duration="0" To="0.7" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Button_C" d:IsOptimized="True"/>
+    						</Storyboard>
+    					</VisualState>
+    				</VisualStateGroup>
+    			</VisualStateManager.VisualStateGroups>
+    			<Image x:Name="Main_Rect_Glass2" Height="253" Canvas.Left="0" Source="mainGameScreen_Images/Main_Rect_Glass5.png" Canvas.Top="0" Width="783"/>
+    			<Image x:Name="Main_Rect_Glass3" Height="253" Canvas.Left="0" Source="mainGameScreen_Images/Main_Rect_Glass4.png" Canvas.Top="0" Width="783"/>
+    			<Image x:Name="Colour_Rect1" Height="253" Canvas.Left="0" Source="mainGameScreen_Images/Colour_Rect2.png" Canvas.Top="0" Width="53"/>
+    			<TextBlock x:Name="AnsCContainter" Foreground="White" FontSize="45.72" FontFamily="Segoe UI Light" LineStackingStrategy="BlockLineHeight" Canvas.Left="111" LineHeight="45.72" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding ansC, UpdateSourceTrigger=PropertyChanged}" Canvas.Top="37.486"/>
+    			<TextBlock x:Name="C" Foreground="White" FontSize="35.56" FontFamily="Segoe UI Light" LineStackingStrategy="BlockLineHeight" Canvas.Left="48" LineHeight="35.56" TextAlignment="Left" TextWrapping="Wrap" Text="C" Canvas.Top="116.267"/>
+    		</Canvas>
+    	</ControlTemplate>
+    	<ControlTemplate x:Key="SelectButtonD" TargetType="Button">
+    		<Canvas x:Name="Button_D" Margin="0" RenderTransformOrigin="0.5,0.5" Background="#00000000">
+    			<Canvas.Resources>
+    				<Storyboard x:Name="MakeDGreen">
+    					<ColorAnimation Duration="0" To="#99008000" Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Button_D" d:IsOptimized="True"/>
+    				</Storyboard>
+    				<Storyboard x:Name="MakeDRed">
+    					<ColorAnimation Duration="0" To="#99FF0000" Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Button_D" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</Canvas.Resources>
+    			<Canvas.RenderTransform>
+    				<CompositeTransform/>
+    			</Canvas.RenderTransform>
+    			<VisualStateManager.VisualStateGroups>
+    				<VisualStateGroup x:Name="CommonStates">
+    					<VisualState x:Name="Normal"/>
+    					<VisualState x:Name="Pressed">
+    						<Storyboard>
+    							<DoubleAnimation Duration="0" To="0.6" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Button_D" d:IsOptimized="True"/>
+    							<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Button_D" d:IsOptimized="True"/>
+    							<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Button_D" d:IsOptimized="True"/>
+    						</Storyboard>
+    					</VisualState>
+    					<VisualState x:Name="Disabled"/>
+    					<VisualState x:Name="PointerOver">
+    						<Storyboard>
+    							<DoubleAnimation Duration="0" To="0.7" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Button_D" d:IsOptimized="True"/>
+    						</Storyboard>
+    					</VisualState>
+    				</VisualStateGroup>
+    			</VisualStateManager.VisualStateGroups>
+    			<Image x:Name="Main_Rect_Glass" Height="253" Canvas.Left="0" Source="mainGameScreen_Images/Main_Rect_Glass7.png" Canvas.Top="0" Width="783"/>
+    			<Image x:Name="Main_Rect_Glass1" Height="253" Canvas.Left="0" Source="mainGameScreen_Images/Main_Rect_Glass6.png" Canvas.Top="0" Width="783"/>
+    			<Image x:Name="Colour_Rect" Height="253" Canvas.Left="730" Source="mainGameScreen_Images/Colour_Rect3.png" Canvas.Top="0" Width="53"/>
+    			<TextBlock x:Name="AnsDContainter" Foreground="White" FontSize="45.72" FontFamily="Segoe UI Light" LineStackingStrategy="BlockLineHeight" Canvas.Left="57" LineHeight="45.72" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding ansD, UpdateSourceTrigger=PropertyChanged}" Canvas.Top="34.486"/>
+    			<TextBlock x:Name="D" Foreground="White" FontSize="35.56" FontFamily="Segoe UI Light" LineStackingStrategy="BlockLineHeight" Canvas.Left="712" LineHeight="35.56" TextAlignment="Left" TextWrapping="Wrap" Text="D" Canvas.Top="111.267"/>
+    		</Canvas>
+    	</ControlTemplate>
+    	<Storyboard x:Name="BackgroundAnimate" RepeatBehavior="Forever">
+    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Blurred_background_2">
+    			<EasingDoubleKeyFrame KeyTime="0:0:10" Value="-60"/>
+    			<EasingDoubleKeyFrame KeyTime="0:0:20" Value="0"/>
+    		</DoubleAnimationUsingKeyFrames>
+    	</Storyboard>
+    	<Storyboard x:Name="StartGameAnim">
+    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="path">
+    			<DiscreteDoubleKeyFrame KeyTime="0" Value="1"/>
+    			<EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0"/>
+    		</DoubleAnimationUsingKeyFrames>
+    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="path1">
+    			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+    			<EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="0"/>
+    		</DoubleAnimationUsingKeyFrames>
+    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="path2">
+    			<DiscreteDoubleKeyFrame KeyTime="0:0:2" Value="1"/>
+    			<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+    		</DoubleAnimationUsingKeyFrames>
+    		<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="path">
+    			<DiscreteObjectKeyFrame KeyTime="0">
+    				<DiscreteObjectKeyFrame.Value>
+    					<Visibility>Visible</Visibility>
+    				</DiscreteObjectKeyFrame.Value>
+    			</DiscreteObjectKeyFrame>
+    			<DiscreteObjectKeyFrame KeyTime="0:0:0.9">
+    				<DiscreteObjectKeyFrame.Value>
+    					<Visibility>Collapsed</Visibility>
+    				</DiscreteObjectKeyFrame.Value>
+    			</DiscreteObjectKeyFrame>
+    		</ObjectAnimationUsingKeyFrames>
+    		<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="path1">
+    			<DiscreteObjectKeyFrame KeyTime="0:0:1">
+    				<DiscreteObjectKeyFrame.Value>
+    					<Visibility>Visible</Visibility>
+    				</DiscreteObjectKeyFrame.Value>
+    			</DiscreteObjectKeyFrame>
+    			<DiscreteObjectKeyFrame KeyTime="0:0:1.8">
+    				<DiscreteObjectKeyFrame.Value>
+    					<Visibility>Collapsed</Visibility>
+    				</DiscreteObjectKeyFrame.Value>
+    			</DiscreteObjectKeyFrame>
+    		</ObjectAnimationUsingKeyFrames>
+    		<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="path2">
+    			<DiscreteObjectKeyFrame KeyTime="0:0:2">
+    				<DiscreteObjectKeyFrame.Value>
+    					<Visibility>Visible</Visibility>
+    				</DiscreteObjectKeyFrame.Value>
+    			</DiscreteObjectKeyFrame>
+    			<DiscreteObjectKeyFrame KeyTime="0:0:3">
+    				<DiscreteObjectKeyFrame.Value>
+    					<Visibility>Collapsed</Visibility>
+    				</DiscreteObjectKeyFrame.Value>
+    			</DiscreteObjectKeyFrame>
+    		</ObjectAnimationUsingKeyFrames>
+    	</Storyboard>
+    	<Storyboard x:Name="EndGameFade">
+    		<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Score__" d:IsOptimized="True"/>
+    		<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ScoreBlock" d:IsOptimized="True"/>
+    		<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Question_Box" d:IsOptimized="True"/>
+    		<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="SelectAnsA" d:IsOptimized="True"/>
+    		<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="SelectAnsB" d:IsOptimized="True"/>
+    		<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="SelectAnsC" d:IsOptimized="True"/>
+    		<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="SelectAnsD" d:IsOptimized="True"/>
+    		<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BackBtn" d:IsOptimized="True"/>
+    		<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TimeBar" d:IsOptimized="True"/>
+    		<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Lives" d:IsOptimized="True"/>
+    		<ColorAnimation Duration="0" To="#001D1D1D" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle" d:IsOptimized="True"/>
+    		<ColorAnimation Duration="0" To="#001D1D1D" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle2" d:IsOptimized="True"/>
+    		<ColorAnimation Duration="0" To="#001D1D1D" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle1" d:IsOptimized="True"/>
+    		<ColorAnimation Duration="0" To="#001D1D1D" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle3" d:IsOptimized="True"/>
+    		<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="GridB" d:IsOptimized="True"/>
+    	</Storyboard>
+    	<Storyboard x:Name="StartGame"/>
+    	<Storyboard x:Name="MakeARed">
+    		<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+    			<EasingColorKeyFrame KeyTime="0" Value="#99FF0000"/>
+    			<DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#00FF0000"/>
+    		</ColorAnimationUsingKeyFrames>
+    		<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle4">
+    			<EasingColorKeyFrame KeyTime="0" Value="#99FF0000"/>
+    			<DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#00FF0000"/>
+    		</ColorAnimationUsingKeyFrames>
+    	</Storyboard>
+    	<Storyboard x:Name="MakeBRed">
+    		<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle1">
+    			<SplineColorKeyFrame KeyTime="0" Value="#99FF0000"/>
+    			<DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#00FF0000"/>
+    		</ColorAnimationUsingKeyFrames>
+    		<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle5">
+    			<EasingColorKeyFrame KeyTime="0" Value="#99FF0000"/>
+    			<DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#00FF0000"/>
+    		</ColorAnimationUsingKeyFrames>
+    	</Storyboard>
+    	<Storyboard x:Name="MakeCRed">
+    		<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle2">
+    			<SplineColorKeyFrame KeyTime="0" Value="#99FF0000"/>
+    			<DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#00FF0000"/>
+    		</ColorAnimationUsingKeyFrames>
+    		<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle6">
+    			<EasingColorKeyFrame KeyTime="0" Value="#99FF0000"/>
+    			<DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#00FF0000"/>
+    		</ColorAnimationUsingKeyFrames>
+    	</Storyboard>
+    	<Storyboard x:Name="MakeDRed">
+    		<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle3">
+    			<SplineColorKeyFrame KeyTime="0" Value="#99FF0000"/>
+    			<DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#00FF0000"/>
+    		</ColorAnimationUsingKeyFrames>
+    		<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle7">
+    			<EasingColorKeyFrame KeyTime="0" Value="#99FF0000"/>
+    			<DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#00FF0000"/>
+    		</ColorAnimationUsingKeyFrames>
+    	</Storyboard>
+    	<Style x:Key="ProgressBar1" TargetType="ProgressBar">
+    		<Setter Property="Foreground" Value="{ThemeResource ProgressBarForegroundThemeBrush}"/>
+    		<Setter Property="Background" Value="{ThemeResource ProgressBarBackgroundThemeBrush}"/>
+    		<Setter Property="BorderBrush" Value="{ThemeResource ProgressBarBorderThemeBrush}"/>
+    		<Setter Property="BorderThickness" Value="{ThemeResource ProgressBarBorderThemeThickness}"/>
+    		<Setter Property="Maximum" Value="100"/>
+    		<Setter Property="MinHeight" Value="{ThemeResource ProgressBarThemeMinHeight}"/>
+    		<Setter Property="IsTabStop" Value="False"/>
+    		<Setter Property="VerticalAlignment" Value="Center"/>
+    		<Setter Property="Template">
+    			<Setter.Value>
+    				<ControlTemplate TargetType="ProgressBar">
+    					<Grid>
+    						<VisualStateManager.VisualStateGroups>
+    							<VisualStateGroup x:Name="CommonStates">
+    								<VisualStateGroup.Transitions>
+    									<VisualTransition From="Updating" To="Determinate">
+    										<Storyboard>
+    											<RepositionThemeAnimation FromHorizontalOffset="{Binding TemplateSettings.IndicatorLengthDelta, RelativeSource={RelativeSource Mode=TemplatedParent}}" TargetName="ProgressBarIndicator"/>
+    										</Storyboard>
+    									</VisualTransition>
+    									<VisualTransition From="Paused" To="Determinate">
+    										<Storyboard>
+    											<DoubleAnimation Duration="0:0:0.25" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ProgressBarIndicator"/>
+    										</Storyboard>
+    									</VisualTransition>
+    									<VisualTransition From="Indeterminate">
+    										<Storyboard>
+    											<FadeInThemeAnimation TargetName="EllipseGrid"/>
+    										</Storyboard>
+    									</VisualTransition>
+    								</VisualStateGroup.Transitions>
+    								<VisualState x:Name="Determinate"/>
+    								<VisualState x:Name="Updating"/>
+    								<VisualState x:Name="Indeterminate">
+    									<Storyboard RepeatBehavior="Forever">
+    										<DoubleAnimation Duration="0:0:3.917" From="{Binding TemplateSettings.ContainerAnimationStartPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}" To="{Binding TemplateSettings.ContainerAnimationEndPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="EllipseGrid"/>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="E1">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+    											<SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:1" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:2" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    											<SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:3" Value="{Binding TemplateSettings.EllipseAnimationEndPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    										</DoubleAnimationUsingKeyFrames>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="E2">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="0"/>
+    											<SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:1.167" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:2.167" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    											<SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:3.167" Value="{Binding TemplateSettings.EllipseAnimationEndPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    										</DoubleAnimationUsingKeyFrames>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="E3">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="0"/>
+    											<SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:1.333" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:2.333" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    											<SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:3.333" Value="{Binding TemplateSettings.EllipseAnimationEndPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    										</DoubleAnimationUsingKeyFrames>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="E4">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+    											<SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:1.5" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    											<SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:3.5" Value="{Binding TemplateSettings.EllipseAnimationEndPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    										</DoubleAnimationUsingKeyFrames>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="E5">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:0.667" Value="0"/>
+    											<SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:1.667" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:2.667" Value="{Binding TemplateSettings.EllipseAnimationWellPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    											<SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" KeyTime="0:0:3.667" Value="{Binding TemplateSettings.EllipseAnimationEndPosition, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    										</DoubleAnimationUsingKeyFrames>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="B1">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="-50"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:3" Value="100"/>
+    										</DoubleAnimationUsingKeyFrames>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="B2">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="-50"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:0.667" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:2.167" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:3.167" Value="100"/>
+    										</DoubleAnimationUsingKeyFrames>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="B3">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="-50"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:0.833" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:2.333" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:3.333" Value="100"/>
+    										</DoubleAnimationUsingKeyFrames>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="B4">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="-50"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="100"/>
+    										</DoubleAnimationUsingKeyFrames>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" Storyboard.TargetName="B5">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="-50"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:1.167" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:2.667" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:3.667" Value="100"/>
+    										</DoubleAnimationUsingKeyFrames>
+    										<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="EllipseGrid"/>
+    										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="E1">
+    											<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ProgressBarIndeterminateForegroundThemeBrush}"/>
+    										</ObjectAnimationUsingKeyFrames>
+    										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="E2">
+    											<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ProgressBarIndeterminateForegroundThemeBrush}"/>
+    										</ObjectAnimationUsingKeyFrames>
+    										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="E3">
+    											<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ProgressBarIndeterminateForegroundThemeBrush}"/>
+    										</ObjectAnimationUsingKeyFrames>
+    										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="E4">
+    											<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ProgressBarIndeterminateForegroundThemeBrush}"/>
+    										</ObjectAnimationUsingKeyFrames>
+    										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="E5">
+    											<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ProgressBarIndeterminateForegroundThemeBrush}"/>
+    										</ObjectAnimationUsingKeyFrames>
+    										<FadeOutThemeAnimation TargetName="DeterminateRoot"/>
+    										<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DeterminateRoot"/>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="E1">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+    										</DoubleAnimationUsingKeyFrames>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="E2">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="1"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:3.167" Value="1"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:3.167" Value="0"/>
+    										</DoubleAnimationUsingKeyFrames>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="E3">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="1"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:3.333" Value="1"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:3.333" Value="0"/>
+    										</DoubleAnimationUsingKeyFrames>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="E4">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="1"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="0"/>
+    										</DoubleAnimationUsingKeyFrames>
+    										<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="E5">
+    											<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:0.667" Value="0"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:0.667" Value="1"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:3.667" Value="1"/>
+    											<EasingDoubleKeyFrame KeyTime="0:0:3.667" Value="0"/>
+    										</DoubleAnimationUsingKeyFrames>
+    									</Storyboard>
+    								</VisualState>
+    								<VisualState x:Name="Error">
+    									<Storyboard>
+    										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ProgressBarIndicator">
+    											<DiscreteObjectKeyFrame KeyTime="0" Value="0"/>
+    										</ObjectAnimationUsingKeyFrames>
+    									</Storyboard>
+    								</VisualState>
+    								<VisualState x:Name="Paused">
+    									<Storyboard>
+    										<DoubleAnimation Duration="0:0:0.25" To="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ProgressBarIndicator"/>
+    									</Storyboard>
+    								</VisualState>
+    							</VisualStateGroup>
+    						</VisualStateManager.VisualStateGroups>
+    						<Grid x:Name="EllipseGrid" Opacity="0">
+    							<Grid.ColumnDefinitions>
+    								<ColumnDefinition Width="Auto"/>
+    								<ColumnDefinition Width="Auto"/>
+    								<ColumnDefinition Width="Auto"/>
+    								<ColumnDefinition Width="Auto"/>
+    								<ColumnDefinition Width="Auto"/>
+    								<ColumnDefinition Width="Auto"/>
+    								<ColumnDefinition Width="Auto"/>
+    								<ColumnDefinition Width="Auto"/>
+    								<ColumnDefinition Width="Auto"/>
+    							</Grid.ColumnDefinitions>
+    							<Grid.RenderTransform>
+    								<TranslateTransform/>
+    							</Grid.RenderTransform>
+    							<Border x:Name="B1" Grid.Column="8" RenderTransformOrigin="0.5,0.5">
+    								<Border.RenderTransform>
+    									<TranslateTransform/>
+    								</Border.RenderTransform>
+    								<Ellipse x:Name="E1" Fill="{TemplateBinding Foreground}" Height="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}" RenderTransformOrigin="0.5,0.5" Width="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}">
+    									<Ellipse.RenderTransform>
+    										<TranslateTransform/>
+    									</Ellipse.RenderTransform>
+    								</Ellipse>
+    							</Border>
+    							<Rectangle Grid.Column="7" Width="{Binding TemplateSettings.EllipseOffset, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    							<Border x:Name="B2" Grid.Column="6" RenderTransformOrigin="0.5,0.5">
+    								<Border.RenderTransform>
+    									<TranslateTransform/>
+    								</Border.RenderTransform>
+    								<Ellipse x:Name="E2" Fill="{TemplateBinding Foreground}" Height="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}" RenderTransformOrigin="0.5,0.5" Width="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}">
+    									<Ellipse.RenderTransform>
+    										<TranslateTransform/>
+    									</Ellipse.RenderTransform>
+    								</Ellipse>
+    							</Border>
+    							<Rectangle Grid.Column="5" Width="{Binding TemplateSettings.EllipseOffset, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    							<Border x:Name="B3" Grid.Column="4" RenderTransformOrigin="0.5,0.5">
+    								<Border.RenderTransform>
+    									<TranslateTransform/>
+    								</Border.RenderTransform>
+    								<Ellipse x:Name="E3" Fill="{TemplateBinding Foreground}" Height="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}" RenderTransformOrigin="0.5,0.5" Width="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}">
+    									<Ellipse.RenderTransform>
+    										<TranslateTransform/>
+    									</Ellipse.RenderTransform>
+    								</Ellipse>
+    							</Border>
+    							<Rectangle Grid.Column="3" Width="{Binding TemplateSettings.EllipseOffset, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    							<Border x:Name="B4" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
+    								<Border.RenderTransform>
+    									<TranslateTransform/>
+    								</Border.RenderTransform>
+    								<Ellipse x:Name="E4" Fill="{TemplateBinding Foreground}" Height="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}" RenderTransformOrigin="0.5,0.5" Width="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}">
+    									<Ellipse.RenderTransform>
+    										<TranslateTransform/>
+    									</Ellipse.RenderTransform>
+    								</Ellipse>
+    							</Border>
+    							<Rectangle Grid.Column="1" Width="{Binding TemplateSettings.EllipseOffset, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+    							<Border x:Name="B5" Grid.Column="0" RenderTransformOrigin="0.5,0.5">
+    								<Border.RenderTransform>
+    									<TranslateTransform/>
+    								</Border.RenderTransform>
+    								<Ellipse x:Name="E5" Fill="{TemplateBinding Foreground}" Height="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}" RenderTransformOrigin="0.5,0.5" Width="{Binding TemplateSettings.EllipseDiameter, RelativeSource={RelativeSource Mode=TemplatedParent}}">
+    									<Ellipse.RenderTransform>
+    										<TranslateTransform/>
+    									</Ellipse.RenderTransform>
+    								</Ellipse>
+    							</Border>
+    						</Grid>
+    						<Border x:Name="DeterminateRoot" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+    							<Rectangle x:Name="ProgressBarIndicator" Fill="{TemplateBinding Foreground}" HorizontalAlignment="Left" Margin="{TemplateBinding Padding}"/>
+    						</Border>
+    					</Grid>
+    				</ControlTemplate>
+    			</Setter.Value>
+    		</Setter>
+    	</Style>
+    	<Storyboard x:Name="BurnLive2">
+    		<DoubleAnimation Duration="0:0:0.5" To="0.2" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Live3" d:IsOptimized="True"/>
+    		<DoubleAnimation Duration="0:0:0.5" To="0.2" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Live5" d:IsOptimized="True"/>
+    	</Storyboard>
+    	<Storyboard x:Name="BurnLive3">
+    		<DoubleAnimation Duration="0:0:0.5" To="0.195" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Live2" d:IsOptimized="True"/>
+    		<DoubleAnimation Duration="0:0:0.5" To="0.2" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Live4" d:IsOptimized="True"/>
+    	</Storyboard>
+    	<Storyboard x:Name="BurnLive1">
+    		<DoubleAnimation Duration="0:0:0.5" To="0.2" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Live1" d:IsOptimized="True"/>
+    		<DoubleAnimation Duration="0:0:0.5" To="0.2" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Live6" d:IsOptimized="True"/>
+    	</Storyboard>
+    	<Storyboard x:Name="MakeAGreen">
+    		<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+    			<DiscreteColorKeyFrame KeyTime="0" Value="Green"/>
+    			<DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#00008000"/>
+    		</ColorAnimationUsingKeyFrames>
+    		<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle4">
+    			<EasingColorKeyFrame KeyTime="0" Value="#99008000"/>
+    			<DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#00008000"/>
+    		</ColorAnimationUsingKeyFrames>
+    	</Storyboard>
+    	<Storyboard x:Name="MakeBGreen">
+    		<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle1">
+    			<SplineColorKeyFrame KeyTime="0" Value="Green"/>
+    			<DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#00008000"/>
+    		</ColorAnimationUsingKeyFrames>
+    		<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle5">
+    			<EasingColorKeyFrame KeyTime="0" Value="#99008000"/>
+    			<DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#00008000"/>
+    		</ColorAnimationUsingKeyFrames>
+    	</Storyboard>
+    	<Storyboard x:Name="MakeCGreen">
+    		<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle2">
+    			<SplineColorKeyFrame KeyTime="0" Value="Green"/>
+    			<DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#00008000"/>
+    		</ColorAnimationUsingKeyFrames>
+    		<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle6">
+    			<EasingColorKeyFrame KeyTime="0" Value="#99008000"/>
+    			<DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#00008000"/>
+    		</ColorAnimationUsingKeyFrames>
+    	</Storyboard>
+    	<Storyboard x:Name="MakeDGreen">
+    		<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle3">
+    			<SplineColorKeyFrame KeyTime="0" Value="Green"/>
+    			<DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#00008000"/>
+    		</ColorAnimationUsingKeyFrames>
+    		<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle7">
+    			<EasingColorKeyFrame KeyTime="0" Value="#99008000"/>
+    			<DiscreteColorKeyFrame KeyTime="0:0:0.5" Value="#00008000"/>
+    		</ColorAnimationUsingKeyFrames>
+    	</Storyboard>
+    	<Storyboard x:Name="UnPauseGameAnim">
+    		<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="PauseScreen">
+    			<DiscreteObjectKeyFrame KeyTime="0">
+    				<DiscreteObjectKeyFrame.Value>
+    					<Visibility>Visible</Visibility>
+    				</DiscreteObjectKeyFrame.Value>
+    			</DiscreteObjectKeyFrame>
+    			<DiscreteObjectKeyFrame KeyTime="0:0:0.5">
+    				<DiscreteObjectKeyFrame.Value>
+    					<Visibility>Collapsed</Visibility>
+    				</DiscreteObjectKeyFrame.Value>
+    			</DiscreteObjectKeyFrame>
+    		</ObjectAnimationUsingKeyFrames>
+    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PauseScreen">
+    			<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+    			<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+    		</DoubleAnimationUsingKeyFrames>
+    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="GameItems">
+    			<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+    			<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+    		</DoubleAnimationUsingKeyFrames>
+    		<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="GridB">
+    			<DiscreteObjectKeyFrame KeyTime="0">
+    				<DiscreteObjectKeyFrame.Value>
+    					<Visibility>Visible</Visibility>
+    				</DiscreteObjectKeyFrame.Value>
+    			</DiscreteObjectKeyFrame>
+    			<DiscreteObjectKeyFrame KeyTime="0:0:0.5">
+    				<DiscreteObjectKeyFrame.Value>
+    					<Visibility>Visible</Visibility>
+    				</DiscreteObjectKeyFrame.Value>
+    			</DiscreteObjectKeyFrame>
+    		</ObjectAnimationUsingKeyFrames>
+    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="GridB">
+    			<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+    			<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+    		</DoubleAnimationUsingKeyFrames>
+    	</Storyboard>
+    	<Storyboard x:Name="PauseGameAnim">
+    		<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="PauseScreen">
+    			<DiscreteObjectKeyFrame KeyTime="0">
+    				<DiscreteObjectKeyFrame.Value>
+    					<Visibility>Visible</Visibility>
+    				</DiscreteObjectKeyFrame.Value>
+    			</DiscreteObjectKeyFrame>
+    		</ObjectAnimationUsingKeyFrames>
+    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PauseScreen">
+    			<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+    			<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+    		</DoubleAnimationUsingKeyFrames>
+    		<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="GameItems" d:IsOptimized="True"/>
+    		<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="GridB" d:IsOptimized="True"/>
+    		<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="GridB">
+    			<DiscreteObjectKeyFrame KeyTime="0:0:0.5">
+    				<DiscreteObjectKeyFrame.Value>
+    					<Visibility>Collapsed</Visibility>
+    				</DiscreteObjectKeyFrame.Value>
+    			</DiscreteObjectKeyFrame>
+    		</ObjectAnimationUsingKeyFrames>
+    	</Storyboard>
+    	<Style x:Key="ButtonStyle1" TargetType="Button">
+    		<Setter Property="Template">
+    			<Setter.Value>
+    				<ControlTemplate TargetType="Button">
+    					<Canvas x:Name="Button_D" RenderTransformOrigin="0.5,0.5">
+    						<Canvas.RenderTransform>
+    							<CompositeTransform/>
+    						</Canvas.RenderTransform>
+    						<VisualStateManager.VisualStateGroups>
+    							<VisualStateGroup x:Name="CommonStates">
+    								<VisualState x:Name="Normal"/>
+    								<VisualState x:Name="Pressed">
+    									<Storyboard>
+    										<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Button_D" d:IsOptimized="True"/>
+    										<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Button_D" d:IsOptimized="True"/>
+    										<DoubleAnimation Duration="0" To="0.6" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Button_D" d:IsOptimized="True"/>
+    									</Storyboard>
+    								</VisualState>
+    								<VisualState x:Name="Disabled"/>
+    								<VisualState x:Name="PointerOver">
+    									<Storyboard>
+    										<DoubleAnimation Duration="0" To="0.7" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Button_D" d:IsOptimized="True"/>
+    									</Storyboard>
+    								</VisualState>
+    							</VisualStateGroup>
+    						</VisualStateManager.VisualStateGroups>
+    						<Image x:Name="Main_Rect" Width="342" Canvas.Top="0" Source="SnappedViewMainGame_Images/Main_Rect3.png" Canvas.Left="0" Height="162"/>
+    						<Image x:Name="Main_Rect_Glassed" Width="342" Canvas.Top="0" Source="SnappedViewMainGame_Images/Main_Rect_Glassed3.png" Canvas.Left="0" Height="162"/>
+    						<Image x:Name="Colour_Rect" Width="42" Canvas.Top="0" Source="SnappedViewMainGame_Images/Colour_Rect3.png" Canvas.Left="0" Height="162"/>
+    						<TextBlock x:Name="D" Canvas.Top="72.4" Text="D" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="37" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+    						<TextBlock TextWrapping="Wrap" Text="{Binding ansD, UpdateSourceTrigger=PropertyChanged}" Canvas.Left="61" Canvas.Top="21.16"/>
+    					</Canvas>
+    				</ControlTemplate>
+    			</Setter.Value>
+    		</Setter>
+    		<Setter Property="FontFamily" Value="Segoe UI Light"/>
+    		<Setter Property="FontSize" Value="18"/>
+    		<Setter Property="Foreground" Value="#FFFAFAFA"/>
+    	</Style>
+    	<Style x:Key="ButtonStyle2" TargetType="Button">
+    		<Setter Property="Template">
+    			<Setter.Value>
+    				<ControlTemplate TargetType="Button">
+    					<Canvas x:Name="Button_C" RenderTransformOrigin="0.5,0.5">
+    						<Canvas.RenderTransform>
+    							<CompositeTransform/>
+    						</Canvas.RenderTransform>
+    						<VisualStateManager.VisualStateGroups>
+    							<VisualStateGroup x:Name="CommonStates">
+    								<VisualState x:Name="Normal"/>
+    								<VisualState x:Name="Pressed">
+    									<Storyboard>
+    										<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Button_C" d:IsOptimized="True"/>
+    										<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Button_C" d:IsOptimized="True"/>
+    										<DoubleAnimation Duration="0" To="0.6" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Button_C" d:IsOptimized="True"/>
+    									</Storyboard>
+    								</VisualState>
+    								<VisualState x:Name="Disabled"/>
+    								<VisualState x:Name="PointerOver">
+    									<Storyboard>
+    										<DoubleAnimation Duration="0" To="0.7" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Button_C" d:IsOptimized="True"/>
+    									</Storyboard>
+    								</VisualState>
+    							</VisualStateGroup>
+    						</VisualStateManager.VisualStateGroups>
+    						<Image x:Name="Main_Rect1" Width="342" Canvas.Top="0" Source="SnappedViewMainGame_Images/Main_Rect2.png" Canvas.Left="0" Height="162"/>
+    						<Image x:Name="Main_Rect_Glassed1" Width="342" Canvas.Top="0" Source="SnappedViewMainGame_Images/Main_Rect_Glassed2.png" Canvas.Left="0" Height="162"/>
+    						<Image x:Name="Colour_Rect1" Width="42" Canvas.Top="0" Source="SnappedViewMainGame_Images/Colour_Rect2.png" Canvas.Left="0" Height="162"/>
+    						<TextBlock x:Name="C" Canvas.Top="73.4" Text="C" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="37" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+    						<TextBlock TextWrapping="Wrap" Text="{Binding ansC, UpdateSourceTrigger=PropertyChanged}" Canvas.Left="61" Canvas.Top="19.16"/>
+    					</Canvas>
+    				</ControlTemplate>
+    			</Setter.Value>
+    		</Setter>
+    		<Setter Property="FontFamily" Value="Segoe UI Light"/>
+    		<Setter Property="FontSize" Value="18"/>
+    		<Setter Property="Foreground" Value="#FFFAFAFA"/>
+    	</Style>
+    	<Style x:Key="ButtonStyle3" TargetType="Button">
+    		<Setter Property="Template">
+    			<Setter.Value>
+    				<ControlTemplate TargetType="Button">
+    					<Canvas x:Name="Button_B" RenderTransformOrigin="0.5,0.5">
+    						<Canvas.RenderTransform>
+    							<CompositeTransform/>
+    						</Canvas.RenderTransform>
+    						<VisualStateManager.VisualStateGroups>
+    							<VisualStateGroup x:Name="CommonStates">
+    								<VisualState x:Name="Normal"/>
+    								<VisualState x:Name="Pressed">
+    									<Storyboard>
+    										<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Button_B" d:IsOptimized="True"/>
+    										<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Button_B" d:IsOptimized="True"/>
+    										<DoubleAnimation Duration="0" To="0.6" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Button_B" d:IsOptimized="True"/>
+    									</Storyboard>
+    								</VisualState>
+    								<VisualState x:Name="Disabled"/>
+    								<VisualState x:Name="PointerOver">
+    									<Storyboard>
+    										<DoubleAnimation Duration="0" To="0.7" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Button_B" d:IsOptimized="True"/>
+    									</Storyboard>
+    								</VisualState>
+    							</VisualStateGroup>
+    						</VisualStateManager.VisualStateGroups>
+    						<Image x:Name="Main_Rect2" Width="342" Canvas.Top="0" Source="SnappedViewMainGame_Images/Main_Rect1.png" Canvas.Left="0" Height="162"/>
+    						<Image x:Name="Main_Rect_Glassed2" Width="342" Canvas.Top="0" Source="SnappedViewMainGame_Images/Main_Rect_Glassed1.png" Canvas.Left="0" Height="162"/>
+    						<Image x:Name="Colour_Rect2" Width="42" Canvas.Top="0" Source="SnappedViewMainGame_Images/Colour_Rect1.png" Canvas.Left="0" Height="162"/>
+    						<TextBlock x:Name="B" Canvas.Top="73.4" Text="B" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="38" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+    						<TextBlock TextWrapping="Wrap" Text="{Binding ansB, UpdateSourceTrigger=PropertyChanged}" Canvas.Left="61" Canvas.Top="19.16"/>
+    					</Canvas>
+    				</ControlTemplate>
+    			</Setter.Value>
+    		</Setter>
+    		<Setter Property="FontFamily" Value="Segoe UI Light"/>
+    		<Setter Property="FontSize" Value="18"/>
+    		<Setter Property="Foreground" Value="#FFFAFAFA"/>
+    	</Style>
+    	<Style x:Key="ButtonStyle4" TargetType="Button">
+    		<Setter Property="Template">
+    			<Setter.Value>
+    				<ControlTemplate TargetType="Button">
+    					<Canvas x:Name="Button_A" RenderTransformOrigin="0.5,0.5">
+    						<Canvas.RenderTransform>
+    							<CompositeTransform/>
+    						</Canvas.RenderTransform>
+    						<VisualStateManager.VisualStateGroups>
+    							<VisualStateGroup x:Name="CommonStates">
+    								<VisualState x:Name="Normal"/>
+    								<VisualState x:Name="Pressed">
+    									<Storyboard>
+    										<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Button_A" d:IsOptimized="True"/>
+    										<DoubleAnimation Duration="0" To="0.98" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Button_A" d:IsOptimized="True"/>
+    										<DoubleAnimation Duration="0" To="0.6" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Button_A" d:IsOptimized="True"/>
+    									</Storyboard>
+    								</VisualState>
+    								<VisualState x:Name="Disabled"/>
+    								<VisualState x:Name="PointerOver">
+    									<Storyboard>
+    										<DoubleAnimation Duration="0" To="0.7" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Button_A" d:IsOptimized="True"/>
+    									</Storyboard>
+    								</VisualState>
+    							</VisualStateGroup>
+    						</VisualStateManager.VisualStateGroups>
+    						<Image x:Name="Main_Rect3" Width="342" Canvas.Top="0" Source="SnappedViewMainGame_Images/Main_Rect.png" Canvas.Left="0" Height="162"/>
+    						<Image x:Name="Main_Rect_Glassed3" Width="342" Canvas.Top="0" Source="SnappedViewMainGame_Images/Main_Rect_Glassed.png" Canvas.Left="0" Height="162"/>
+    						<Image x:Name="Colour_Rect3" Width="42" Canvas.Top="0" Source="SnappedViewMainGame_Images/Colour_Rect.png" Canvas.Left="0" Height="162"/>
+    						<TextBlock x:Name="A" Canvas.Top="73.4" Text="A" TextWrapping="Wrap" TextAlignment="Left" LineHeight="20" Canvas.Left="37" LineStackingStrategy="BlockLineHeight" FontFamily="Segoe UI Light" FontSize="20" Foreground="#FFFAFAFA"/>
+    						<TextBlock TextWrapping="Wrap" Text="{Binding ansA, UpdateSourceTrigger=PropertyChanged}" Canvas.Left="61" Canvas.Top="17.26"/>
+    					</Canvas>
+    				</ControlTemplate>
+    			</Setter.Value>
+    		</Setter>
+    		<Setter Property="FontFamily" Value="Segoe UI Light"/>
+    		<Setter Property="FontSize" Value="18"/>
+    		<Setter Property="Foreground" Value="#FFFAFAFA"/>
+    	</Style>
+    </Page.Resources>
+	<Page.TopAppBar>
+		<CommandBar>
+			<CommandBar.SecondaryCommands>
+				<AppBarButton x:ConnectionId='2' x:Name="BackToMainBtn" Label="Back to Main Menu" Icon="Back"                     />
+				<AppBarSeparator/>
+				<AppBarButton x:ConnectionId='3' x:Name="SettingsBtn" Label="Settings" Icon="Setting"                     />
+			</CommandBar.SecondaryCommands>
+			<AppBarButton x:ConnectionId='4' x:Name="PauseGameAppBr" Label="Pause" Icon="Pause"                  />
+			<AppBarSeparator/>
+			<AppBarButton x:ConnectionId='5' x:Name="RestartGameBtn" Label="Restart Game" Icon="RepeatAll"                   />
+		</CommandBar>
+	</Page.TopAppBar>
+	<Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="UniformToFill" >
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="VisualStateGroup">
+				<VisualStateGroup.Transitions>
+					<VisualTransition GeneratedDuration="0"/>
+				</VisualStateGroup.Transitions>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		<Grid x:Name="grid" Width="1920" Height="1080">
+			<Image x:Name="Blurred_background_2" Source="mainGameScreen_Images/Blurred_background_2.png" Margin="-285,-225,-255,-375" RenderTransformOrigin="0.5,0.5" Stretch="Fill" d:IsHidden="True">
+				<Image.RenderTransform>
+					<CompositeTransform/>
+				</Image.RenderTransform>
+			</Image>
+			<Viewbox x:Name="QuestionViewBox" Margin="95,0,98,0" d:IsHidden="True">
+				<Grid x:Name="NormalGrid" Height="1080" Width="1920">
+					<Grid.ChildrenTransitions>
+						<TransitionCollection/>
+					</Grid.ChildrenTransitions>
+					<Grid x:Name="MainGame1">
+						<Grid x:Name="GameItems" Margin="36.479,55.476,119,82">
+							<Grid.ChildrenTransitions>
+								<TransitionCollection>
+									<EntranceThemeTransition/>
+								</TransitionCollection>
+							</Grid.ChildrenTransitions>
+							<Grid x:Name="GameItems1" Margin="0,0,-104,-67">
+								<Grid.ChildrenTransitions>
+									<TransitionCollection/>
+								</Grid.ChildrenTransitions>
+								<ProgressBar x:Name="TimeBar" HorizontalAlignment="Left" Height="87.124" Margin="663.604,637.044,0,0" VerticalAlignment="Top" Width="514.743" RenderTransformOrigin="0.5,0.5" Value="{Binding RemainingTime, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TimeBrush, UpdateSourceTrigger=PropertyChanged}" Maximum="100">
+									<ProgressBar.RenderTransform>
+										<CompositeTransform Rotation="270"/>
+									</ProgressBar.RenderTransform>
+								</ProgressBar>
+								<Rectangle x:Name="rectangle" Fill="#001D1D1D" HorizontalAlignment="Left" Margin="{Binding Margin, ElementName=SelectAnsA}" VerticalAlignment="Top" Width="{Binding Width, ElementName=SelectAnsA}" Height="255"/>
+								<Rectangle x:Name="rectangle2" Fill="#001D1D1D" HorizontalAlignment="Left" Margin="{Binding Margin, ElementName=SelectAnsC}" VerticalAlignment="Top" Width="783" Height="255"/>
+								<Rectangle x:Name="rectangle1" Fill="#001D1D1D" HorizontalAlignment="Left" Margin="{Binding Margin, ElementName=SelectAnsB}" VerticalAlignment="Top" Width="783" Height="255"/>
+								<Rectangle x:Name="rectangle3" Fill="#001D1D1D" HorizontalAlignment="Left" Margin="{Binding Margin, ElementName=SelectAnsD}" VerticalAlignment="Top" Width="783" Height="255"/>
+								<Button x:ConnectionId='11' x:Name="SelectAnsA" HorizontalAlignment="Left" VerticalAlignment="Top" Template="{StaticResource ButtonATemplate}" BorderBrush="{x:Null}"                   Foreground="{x:Null}" Background="{x:Null}" Margin="80,420,0,0" BorderThickness="0" Height="256" Width="783"/>
+								<Button x:ConnectionId='12' x:Name="SelectAnsB" Content="Button" Template="{StaticResource ButtonBTemplate}" Height="255" Width="783" Margin="978,420.831,0,0"                   VerticalAlignment="Top"/>
+								<Button x:ConnectionId='13' x:Name="SelectAnsC" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Template="{StaticResource SelectAnsCTemplate}" Height="255" Margin="80,686,0,0" Width="783"                  />
+								<Button x:ConnectionId='14' x:Name="SelectAnsD" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Template="{StaticResource SelectButtonD}" Height="253" Width="783" Margin="978,686,0,0"                  />
+								<TextBlock x:Name="Score__" Foreground="White" FontSize="50.8" FontFamily="Segoe UI Light" LineStackingStrategy="BlockLineHeight" LineHeight="50.8" TextAlignment="Left" TextWrapping="Wrap" Text="Score: " Margin="79.333,5,0,0" HorizontalAlignment="Left" Width="134.79" Height="50.8" VerticalAlignment="Top"/>
+								<TextBlock x:Name="ScoreBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Score, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" FontSize="50.8" FontFamily="Segoe UI Light" Margin="236.228,0,0,0"/>
+								<Canvas x:Name="Question_Box" Margin="80,82.524,0,0" Height="310" VerticalAlignment="Top">
+									<Path x:Name="Question_Box_Glassed_2_" Data="M1.99604,2 C1.99604,2 1678.67,2 1678.67,2 C1678.67,2 1678.67,302 1678.67,302 C1678.67,302 1.99604,302 1.99604,302 C1.99604,302 1.99604,2 1.99604,2 z" Height="303" Canvas.Left="0.667" Stretch="None" Canvas.Top="0" Width="1685">
+										<Path.Fill>
+											<SolidColorBrush Color="White" Opacity="0.14901960784313725"/>
+										</Path.Fill>
+									</Path>
+									<TextBlock x:Name="QuestionBox" Foreground="White" FontSize="48" FontFamily="Segoe UI Light" LineStackingStrategy="BlockLineHeight" Canvas.Left="32" LineHeight="35.56" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding question, UpdateSourceTrigger=PropertyChanged}" Width="1621.875" Canvas.Top="40.125" Height="234.375"/>
+								</Canvas>
+								<Button x:ConnectionId='15' x:Name="BackBtn" Content="Button" HorizontalAlignment="Left" Style="{StaticResource NavigationBackButtonNormalStyle}" VerticalAlignment="Top" Height="45.033" Width="44.226" Margin="0,5,0,0"                     />
+								<Grid x:Name="Lives" Margin="1410.293,946,3.521,-159.476">
+									<Image x:Name="Live1" HorizontalAlignment="Left" Height="156" VerticalAlignment="Top" Width="218" Source="Assets/heart-icon.png" Margin="63,-35,0,0"/>
+									<Image x:Name="Live3" HorizontalAlignment="Left" Height="156" VerticalAlignment="Top" Width="205.293" Margin="141,-35,0,0" Source="Assets/heart-icon.png"/>
+									<Image x:Name="Live2" HorizontalAlignment="Left" Height="156" VerticalAlignment="Top" Width="196" Margin="217.707,-35,-63,0" Source="Assets/heart-icon.png"/>
+								</Grid>
+							</Grid>
+						</Grid>
+						<MediaElement x:Name="SfxClick" HorizontalAlignment="Left" Height="100" Margin="36.479,1601,0,-621" VerticalAlignment="Top" Width="100" Source="Sfx/Sfx_Click.mp3" RenderTransformOrigin="0.5,0.5" AutoPlay="False">
+							<MediaElement.RenderTransform>
+								<CompositeTransform/>
+							</MediaElement.RenderTransform>
+						</MediaElement>
+						<Path x:Name="path" Data="M23.625,18.0563 C26.4375,18.0563 28.9844,18.4469 31.2656,19.2281 C33.5469,20.0094 35.5,21.1031 37.125,22.5094 C38.75,23.9156 40.0078,25.6031 40.8984,27.5719 C41.7891,29.5406 42.2344,31.7125 42.2344,34.0875 C42.2344,42.9313 37.7656,48.6188 28.8281,51.15 L28.8281,51.3375 C31.1094,51.5875 33.2188,52.1422 35.1562,53.0016 C37.0938,53.8609 38.7656,54.9781 40.1719,56.3531 C41.5781,57.7281 42.6797,59.3453 43.4766,61.2047 C44.2734,63.0641 44.6719,65.1188 44.6719,67.3688 C44.6719,70.4 44.1016,73.1578 42.9609,75.6422 C41.8203,78.1266 40.2109,80.2516 38.1328,82.0172 C36.0547,83.7828 33.5625,85.15 30.6562,86.1188 C27.75,87.0875 24.5469,87.5719 21.0469,87.5719 C14.6406,87.5719 9.54688,86.3531 5.76563,83.9156 L5.76563,75.6656 C10.2969,79.2281 15.4844,81.0094 21.3281,81.0094 C23.6719,81.0094 25.7891,80.7125 27.6797,80.1188 C29.5703,79.525 31.1953,78.6656 32.5547,77.5406 C33.9141,76.4156 34.9609,75.0563 35.6953,73.4625 C36.4297,71.8688 36.7969,70.0719 36.7969,68.0719 C36.7969,59.2906 30.5469,54.9 18.0469,54.9 L12.4688,54.9 L12.4688,48.3844 L17.7656,48.3844 C28.8281,48.3844 34.3594,44.2594 34.3594,36.0094 C34.3594,28.3844 30.1406,24.5719 21.7031,24.5719 C16.9531,24.5719 12.5,26.1656 8.34375,29.3531 L8.34375,21.9 C12.625,19.3375 17.7188,18.0563 23.625,18.0563 z" Fill="White" Margin="760,300,0,0" RenderTransformOrigin="0.5,0.5" Stretch="Fill" Opacity="0" Height="610" VerticalAlignment="Top" HorizontalAlignment="Left" Width="400" Visibility="Collapsed">
+							<Path.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform/>
+									<SkewTransform/>
+									<RotateTransform/>
+									<TranslateTransform/>
+								</TransformGroup>
+							</Path.RenderTransform>
+						</Path>
+						<Path x:Name="path1" Data="M2.83594,2.06894 C3.15104,2.06895 3.44287,2.1146 3.71143,2.20591 C3.97998,2.29722 4.21273,2.4306 4.40967,2.60605 C4.60661,2.78151 4.76147,2.99814 4.87427,3.25596 C4.98706,3.51377 5.04346,3.80918 5.04346,4.14219 C5.04346,4.44655 5.00854,4.72227 4.93872,4.96934 C4.8689,5.21641 4.76326,5.44915 4.62183,5.66758 C4.48039,5.886 4.30225,6.09548 4.0874,6.296 C3.87256,6.49652 3.62012,6.70062 3.33008,6.9083 C2.96842,7.16611 2.67033,7.38633 2.43579,7.56894 C2.20125,7.75156 2.01506,7.92254 1.8772,8.08188 C1.73934,8.24123 1.64266,8.40057 1.58716,8.55991 C1.53166,8.71925 1.50391,8.90277 1.50391,9.11045 L5.33887,9.11045 L5.33887,9.9 L0.585449,9.9 L0.585449,9.51865 C0.585449,9.18923 0.621256,8.89919 0.692871,8.64853 C0.764486,8.39788 0.88265,8.15977 1.04736,7.93418 C1.21208,7.70859 1.42782,7.48301 1.69458,7.25742 C1.96134,7.03184 2.28809,6.7776 2.6748,6.49473 C2.9541,6.29421 3.18774,6.10264 3.37573,5.92002 C3.56372,5.7374 3.71501,5.55478 3.82959,5.37217 C3.94417,5.18955 4.02563,5.00425 4.07397,4.81626 C4.12231,4.62827 4.14648,4.42865 4.14648,4.21738 C4.14648,3.98105 4.10978,3.77516 4.03638,3.59971 C3.96297,3.42425 3.86271,3.27834 3.7356,3.16196 C3.60848,3.04559 3.45898,2.95876 3.28711,2.90146 C3.11523,2.84417 2.92904,2.81553 2.72852,2.81553 C2.55664,2.81553 2.38835,2.8388 2.22363,2.88535 C2.05892,2.9319 1.89868,2.99635 1.74292,3.07871 C1.58716,3.16107 1.43677,3.25954 1.29175,3.37412 C1.14673,3.4887 1.01156,3.61582 0.88623,3.75547 L0.88623,2.81016 C1.1333,2.57025 1.40991,2.38673 1.71606,2.25962 C2.02222,2.1325 2.39551,2.06895 2.83594,2.06894 z" Fill="#FFA6A6A6" Margin="760,300,0,0" RenderTransformOrigin="0.5,0.5" Stretch="Fill" Opacity="0" Height="610" VerticalAlignment="Top" HorizontalAlignment="Left" Width="400" Visibility="Collapsed">
+							<Path.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform/>
+									<SkewTransform/>
+									<RotateTransform/>
+									<TranslateTransform/>
+								</TransformGroup>
+							</Path.RenderTransform>
+						</Path>
+						<Path x:Name="path2" Data="M3.55566,2.02598 L3.88867,2.02598 L3.88867,9.9 L3.00781,9.9 L3.00781,3.24521 C2.93978,3.31325 2.84041,3.39113 2.70972,3.47886 C2.57902,3.56659 2.43221,3.65342 2.26929,3.73936 C2.10636,3.82529 1.93449,3.90586 1.75366,3.98105 C1.57284,4.05625 1.39648,4.11533 1.22461,4.1583 L1.22461,3.2667 C1.41797,3.21299 1.62297,3.14048 1.8396,3.04917 C2.05623,2.95786 2.26929,2.85581 2.47876,2.74302 C2.68823,2.63022 2.88607,2.51206 3.07227,2.38853 C3.25846,2.26499 3.4196,2.14414 3.55566,2.02598 z" Fill="#FF5D5D5D" Margin="810,300,0,0" RenderTransformOrigin="0.5,0.5" Stretch="Fill" Opacity="0" HorizontalAlignment="Left" Width="200" Height="610" VerticalAlignment="Top" Visibility="Collapsed">
+							<Path.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform/>
+									<SkewTransform/>
+									<RotateTransform/>
+									<TranslateTransform/>
+								</TransformGroup>
+							</Path.RenderTransform>
+						</Path>
+						<MediaElement x:Name="SfxCorrect" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="259,1601,0,-621" Source="Sfx/Sfx_Correct.mp3" AutoPlay="False"/>
+						<MediaElement x:Name="SfxClock" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="978,1561,0,-581" AutoPlay="False" Source="Sfx/Sfx_Clock.mp3"/>
+						<MediaElement x:Name="SfxIncorrect" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="432,1601,0,-621" Source="Sfx/Sfx_Incorrect.mp3" AutoPlay="False"/>
+						<MediaElement x:Name="SfxWoosh1" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" AutoPlay="False" Source="Sfx/Woosh1.mp3" Margin="978,1561,0,-581"/>
+						<Grid x:Name="PauseScreen" Margin="0,0,0,-180" Visibility="Collapsed">
+							<Rectangle x:Name="PauseBorder" Fill="#7F000000" HorizontalAlignment="Left" Height="1652" Stroke="Black" VerticalAlignment="Top" Width="2639" Margin="-210,-147,-509,-245"/>
+							<TextBlock HorizontalAlignment="Left" Height="119" Margin="587,213.6,0,0" TextWrapping="Wrap" Text="Game Paused" VerticalAlignment="Top" Width="742" FontSize="96" TextAlignment="Center"/>
+							<TextBlock HorizontalAlignment="Left" Height="162" Margin="587,623,0,0" TextWrapping="Wrap" Text="Tap Pause again to Continue" VerticalAlignment="Top" Width="771" FontSize="64" TextAlignment="Center"/>
+						</Grid>
+						<MediaElement x:Name="BackgroundMusic" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="1060,1260,0,-280" IsLooping="True" Source="Sfx/BackgroundMusic.mp3" Stereo3DVideoRenderMode="Stereo" Canvas.ZIndex="3" AutoPlay="False"/>
+					</Grid>
+				</Grid>
+			</Viewbox>
+			<Canvas x:Name="SnappedViewMainGame" HorizontalAlignment="Center" Height="1080" UseLayoutRounding="False" VerticalAlignment="Center" Width="500">
+				<Canvas.ChildrenTransitions>
+					<TransitionCollection>
+						<EntranceThemeTransition/>
+					</TransitionCollection>
+				</Canvas.ChildrenTransitions>
+				<Canvas.Clip>
+					<RectangleGeometry Rect="0,0,500,1080"/>
+				</Canvas.Clip>
+				<Grid x:Name="grid2" Height="1020.6" Canvas.Left="29.5" Canvas.Top="20.4" Width="459.05">
+					<Grid.ChildrenTransitions>
+						<TransitionCollection>
+							<EntranceThemeTransition/>
+						</TransitionCollection>
+					</Grid.ChildrenTransitions>
+					<Grid x:Name="GridB">
+						<Grid.ChildrenTransitions>
+							<TransitionCollection/>
+						</Grid.ChildrenTransitions>
+						<TextBlock x:Name="Score" Foreground="#FFFAFAFA" FontSize="20" FontFamily="Segoe UI Light" LineStackingStrategy="BlockLineHeight" LineHeight="20" TextAlignment="Left" TextWrapping="Wrap" Text="Score" Margin="49.5,5,360.816,995.6"/>
+						<Canvas x:Name="Question_Box1" Margin="48.5,38.6,68.55,740">
+							<Path x:Name="Question_Box2" Data="F1M1,1C1,1 341,1 341,1 341,1 341,241 341,241 341,241 1,241 1,241 1,241 1,1 1,1z" Height="242" Canvas.Left="0" Stretch="None" Canvas.Top="0" Width="342">
+								<Path.Fill>
+									<SolidColorBrush Color="#FF330000" Opacity="0.14901960784313725"/>
+								</Path.Fill>
+							</Path>
+							<Path x:Name="Question_Box_Glassed" Data="F1M1,1C1,1 341,1 341,1 341,1 341,241 341,241 341,241 1,241 1,241 1,241 1,1 1,1z" Height="242" Canvas.Left="1.333" Stretch="None" Canvas.Top="0" Width="342">
+								<Path.Fill>
+									<SolidColorBrush Color="#FF330000" Opacity="0.14901960784313725"/>
+								</Path.Fill>
+							</Path>
+							<TextBlock x:Name="QuestionBox_Copy" Foreground="White" FontSize="26.667" FontFamily="Segoe UI Light" LineStackingStrategy="BlockLineHeight" Canvas.Left="9.999" LineHeight="35.56" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding question, UpdateSourceTrigger=PropertyChanged}" Canvas.Top="10" Width="322.001" Height="222"/>
+						</Canvas>
+						<Rectangle x:Name="rectangle4" Fill="#00008000" HorizontalAlignment="Left" Height="160" VerticalAlignment="Top" Width="341" Margin="50.85,350.6,0,0"/>
+						<Rectangle x:Name="rectangle5" Fill="#00008000" HorizontalAlignment="Left" Height="160.9" VerticalAlignment="Top" Width="341" Margin="49.5,519.7,0,0"/>
+						<Rectangle x:Name="rectangle6" Fill="#00008000" HorizontalAlignment="Left" Height="160.337" VerticalAlignment="Top" Width="340.663" Margin="49.837,689.275,0,0"/>
+						<Rectangle x:Name="rectangle7" Fill="#00008000" HorizontalAlignment="Left" Height="160.9" VerticalAlignment="Top" Width="341" Margin="50.041,859.139,0,0"/>
+						<Button x:ConnectionId='6' x:Name="buttonD" Content="Lorem ipsum dolor" Height="162" Style="{StaticResource ButtonStyle1}" Width="342"                   Margin="49.5,858.6,0,0"/>
+						<Button x:ConnectionId='7' x:Name="buttonC" Content="Lorem ipsum dolor" Height="162" Style="{StaticResource ButtonStyle2}" Width="342"                   Margin="49.5,688.6,0,170"/>
+						<Button x:ConnectionId='8' x:Name="buttonB" Content="Lorem ipsum dolor" Height="162" Style="{StaticResource ButtonStyle3}" Width="342"                   Margin="49.5,518.6,0,340"/>
+						<Button x:ConnectionId='9' x:Name="buttonA" Content="Lorem ipsum dolor" Height="162" Style="{StaticResource ButtonStyle4}" Width="342"                   Margin="49.5,348.6,0,510"/>
+						<ProgressBar x:Name="TimeBarSnapped" HorizontalAlignment="Left" Height="58" VerticalAlignment="Top" Width="339.65" RenderTransformOrigin="0.5,0.5" Value="{Binding RemainingTime, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TimeBrush, UpdateSourceTrigger=PropertyChanged}" Maximum="100" Background="#FF453838" Margin="50.85,285.6,0,0"/>
+						<TextBlock x:Name="ScoreBlock_Copy1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Score, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Light" Margin="105.35,1.75,0,0" Height="20" Width="37.8"/>
+						<Button x:ConnectionId='10' Content="Button" Style="{StaticResource NavigationBackButtonSmallStyle}"                     />
+						<Grid x:Name="LivesSnapped" Margin="4.05,272.7,0,524.9">
+							<Image x:Name="Live4" HorizontalAlignment="Left" Height="156" VerticalAlignment="Top" Width="218" Source="Assets/heart-icon.png" Margin="63,-35,0,0"/>
+							<Image x:Name="Live5" HorizontalAlignment="Left" Height="156" VerticalAlignment="Top" Width="205.293" Margin="141,-35,0,0" Source="Assets/heart-icon.png"/>
+							<Image x:Name="Live6" HorizontalAlignment="Left" Height="156" VerticalAlignment="Top" Width="196" Margin="217.707,-35,-63,0" Source="Assets/heart-icon.png"/>
+						</Grid>
+					</Grid>
+				</Grid>
+			</Canvas>
+		</Grid>
+
+	</Viewbox>
+
+<!--
+        This grid acts as a root panel for the page that defines two rows:
+        * Row 0 contains the back button and page title
+        * Row 1 contains the rest of the page layout
+    -->
+</Page>
+

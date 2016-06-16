@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>WEBMASTER-PC</Machine>
+    <WindowsUser>Konstantinos</WindowsUser>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>c976a3ff-2c92-4f43-92e3-e5a76ceda059</PackageIdentityName>
+    <RegisteredManifestChecksum>D3DAECC55742FB9B80B7E9B6326CFDE380FCA8A363968DF8045AE98082CDCC5B</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>c976a3ff-2c92-4f43-92e3-e5a76ceda059_1.0.0.1_neutral__ysykw5g2cxb6t</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>c976a3ff-2c92-4f43-92e3-e5a76ceda059_ysykw5g2cxb6t!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>c976a3ff-2c92-4f43-92e3-e5a76ceda059</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Konstantinos</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.1</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-01-25T12:14:22.897</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\bin\Debug\Bequized.exe">
+      <PackagePath>Bequized.exe</PackagePath>
+      <Modified>2014-01-25T12:14:22.568</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\Assets\heart-icon.png">
+      <PackagePath>Assets\heart-icon.png</PackagePath>
+      <Modified>2014-01-12T09:35:52.011</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\Assets\StartTimedBtn.png">
+      <PackagePath>Assets\StartTimedBtn.png</PackagePath>
+      <Modified>2014-01-05T17:42:19.856</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\Assets\StartCustomBtn.png">
+      <PackagePath>Assets\StartCustomBtn.png</PackagePath>
+      <Modified>2014-01-05T17:30:53.688</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T04:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T04:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T04:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T04:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\Assets\StartNormalBtn.png">
+      <PackagePath>Assets\StartNormalBtn.png</PackagePath>
+      <Modified>2014-01-05T17:26:46.847</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Background_Solid.png">
+      <PackagePath>mainGameScreen_Images\Background_Solid.png</PackagePath>
+      <Modified>2014-01-05T22:53:07.773</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Blurred_background_1.png">
+      <PackagePath>mainGameScreen_Images\Blurred_background_1.png</PackagePath>
+      <Modified>2014-01-05T22:53:07.532</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Blurred_background_2.png">
+      <PackagePath>mainGameScreen_Images\Blurred_background_2.png</PackagePath>
+      <Modified>2014-01-10T16:58:16.368</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Colour_Rect %28Layer Mask%29.png">
+      <PackagePath>mainGameScreen_Images\Colour_Rect %28Layer Mask%29.png</PackagePath>
+      <Modified>2014-01-10T16:58:14.422</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Colour_Rect %28Layer Mask%291.png">
+      <PackagePath>mainGameScreen_Images\Colour_Rect %28Layer Mask%291.png</PackagePath>
+      <Modified>2014-01-10T16:58:14.778</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Colour_Rect %28Layer Mask%292.png">
+      <PackagePath>mainGameScreen_Images\Colour_Rect %28Layer Mask%292.png</PackagePath>
+      <Modified>2014-01-10T16:58:15.087</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Colour_Rect %28Layer Mask%293.png">
+      <PackagePath>mainGameScreen_Images\Colour_Rect %28Layer Mask%293.png</PackagePath>
+      <Modified>2014-01-10T16:58:15.390</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Colour_Rect.png">
+      <PackagePath>mainGameScreen_Images\Colour_Rect.png</PackagePath>
+      <Modified>2014-01-10T16:58:14.395</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Colour_Rect1.png">
+      <PackagePath>mainGameScreen_Images\Colour_Rect1.png</PackagePath>
+      <Modified>2014-01-10T16:58:14.752</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Colour_Rect2.png">
+      <PackagePath>mainGameScreen_Images\Colour_Rect2.png</PackagePath>
+      <Modified>2014-01-10T16:58:15.067</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Colour_Rect3.png">
+      <PackagePath>mainGameScreen_Images\Colour_Rect3.png</PackagePath>
+      <Modified>2014-01-10T16:58:15.371</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect %28Layer Mask%29.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect %28Layer Mask%29.png</PackagePath>
+      <Modified>2014-01-05T22:53:06.229</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect %28Layer Mask%291.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect %28Layer Mask%291.png</PackagePath>
+      <Modified>2014-01-05T22:53:06.411</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect %28Layer Mask%292.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect %28Layer Mask%292.png</PackagePath>
+      <Modified>2014-01-05T22:53:06.568</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect %28Layer Mask%293.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect %28Layer Mask%293.png</PackagePath>
+      <Modified>2014-01-05T22:53:06.744</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect.png</PackagePath>
+      <Modified>2014-01-05T22:53:06.200</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect1.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect1.png</PackagePath>
+      <Modified>2014-01-05T22:53:06.387</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect2.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect2.png</PackagePath>
+      <Modified>2014-01-05T22:53:06.551</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect3.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect3.png</PackagePath>
+      <Modified>2014-01-05T22:53:06.711</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect_Glass %28Layer Mask%29.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect_Glass %28Layer Mask%29.png</PackagePath>
+      <Modified>2014-01-10T16:58:14.666</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect_Glass %28Layer Mask%291.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect_Glass %28Layer Mask%291.png</PackagePath>
+      <Modified>2014-01-10T16:58:14.733</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect_Glass %28Layer Mask%292.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect_Glass %28Layer Mask%292.png</PackagePath>
+      <Modified>2014-01-10T16:58:14.961</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect_Glass %28Layer Mask%293.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect_Glass %28Layer Mask%293.png</PackagePath>
+      <Modified>2014-01-10T16:58:15.053</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect_Glass %28Layer Mask%294.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect_Glass %28Layer Mask%294.png</PackagePath>
+      <Modified>2014-01-10T16:58:15.247</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect_Glass %28Layer Mask%295.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect_Glass %28Layer Mask%295.png</PackagePath>
+      <Modified>2014-01-10T16:58:15.355</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect_Glass %28Layer Mask%296.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect_Glass %28Layer Mask%296.png</PackagePath>
+      <Modified>2014-01-10T16:58:15.534</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect_Glass %28Layer Mask%297.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect_Glass %28Layer Mask%297.png</PackagePath>
+      <Modified>2014-01-10T16:58:15.619</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect_Glass.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect_Glass.png</PackagePath>
+      <Modified>2014-01-10T16:58:14.632</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect_Glass1.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect_Glass1.png</PackagePath>
+      <Modified>2014-01-10T16:58:14.692</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect_Glass2.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect_Glass2.png</PackagePath>
+      <Modified>2014-01-10T16:58:14.906</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect_Glass3.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect_Glass3.png</PackagePath>
+      <Modified>2014-01-10T16:58:15.002</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect_Glass4.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect_Glass4.png</PackagePath>
+      <Modified>2014-01-10T16:58:15.195</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect_Glass5.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect_Glass5.png</PackagePath>
+      <Modified>2014-01-10T16:58:15.278</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect_Glass6.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect_Glass6.png</PackagePath>
+      <Modified>2014-01-10T16:58:15.487</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainGameScreen_Images\Main_Rect_Glass7.png">
+      <PackagePath>mainGameScreen_Images\Main_Rect_Glass7.png</PackagePath>
+      <Modified>2014-01-10T16:58:15.564</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainMenuScreen_Images\Blurred_Background.png">
+      <PackagePath>mainMenuScreen_Images\Blurred_Background.png</PackagePath>
+      <Modified>2014-01-07T10:17:39.389</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainMenuScreen_Images\Box_Normal %28Layer Mask%29.png">
+      <PackagePath>mainMenuScreen_Images\Box_Normal %28Layer Mask%29.png</PackagePath>
+      <Modified>2014-01-07T10:17:38.609</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainMenuScreen_Images\Box_Normal.png">
+      <PackagePath>mainMenuScreen_Images\Box_Normal.png</PackagePath>
+      <Modified>2014-01-07T10:17:38.599</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainMenuScreen_Images\Box_Normal_Glassed %28Layer Mask%29.png">
+      <PackagePath>mainMenuScreen_Images\Box_Normal_Glassed %28Layer Mask%29.png</PackagePath>
+      <Modified>2014-01-07T10:17:38.590</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainMenuScreen_Images\Box_Normal_Glassed.png">
+      <PackagePath>mainMenuScreen_Images\Box_Normal_Glassed.png</PackagePath>
+      <Modified>2014-01-07T10:17:38.579</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainMenuScreen_Images\Box_Statistics %28Layer Mask%29.png">
+      <PackagePath>mainMenuScreen_Images\Box_Statistics %28Layer Mask%29.png</PackagePath>
+      <Modified>2014-01-07T10:17:38.777</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainMenuScreen_Images\Box_Statistics.png">
+      <PackagePath>mainMenuScreen_Images\Box_Statistics.png</PackagePath>
+      <Modified>2014-01-07T10:17:38.760</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainMenuScreen_Images\Box_Statistics_Glassed %28Layer Mask%29.png">
+      <PackagePath>mainMenuScreen_Images\Box_Statistics_Glassed %28Layer Mask%29.png</PackagePath>
+      <Modified>2014-01-07T10:17:38.749</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainMenuScreen_Images\Box_Statistics_Glassed.png">
+      <PackagePath>mainMenuScreen_Images\Box_Statistics_Glassed.png</PackagePath>
+      <Modified>2014-01-07T10:17:38.732</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainMenuScreen_Images\Box_Time_Attack %28Layer Mask%29.png">
+      <PackagePath>mainMenuScreen_Images\Box_Time_Attack %28Layer Mask%29.png</PackagePath>
+      <Modified>2014-01-07T10:17:38.687</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainMenuScreen_Images\Box_Time_Attack.png">
+      <PackagePath>mainMenuScreen_Images\Box_Time_Attack.png</PackagePath>
+      <Modified>2014-01-07T10:17:38.670</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainMenuScreen_Images\Box_Time_Attack_Glassed %28Layer Mask%29.png">
+      <PackagePath>mainMenuScreen_Images\Box_Time_Attack_Glassed %28Layer Mask%29.png</PackagePath>
+      <Modified>2014-01-07T10:17:38.662</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainMenuScreen_Images\Box_Time_Attack_Glassed.png">
+      <PackagePath>mainMenuScreen_Images\Box_Time_Attack_Glassed.png</PackagePath>
+      <Modified>2014-01-07T10:17:38.651</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainMenuScreen_Images\Clock_Icon.png">
+      <PackagePath>mainMenuScreen_Images\Clock_Icon.png</PackagePath>
+      <Modified>2014-01-07T10:17:38.619</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainMenuScreen_Images\Play_Icon.png">
+      <PackagePath>mainMenuScreen_Images\Play_Icon.png</PackagePath>
+      <Modified>2014-01-07T10:17:38.402</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainMenuScreen_Images\Stat_Icon.png">
+      <PackagePath>mainMenuScreen_Images\Stat_Icon.png</PackagePath>
+      <Modified>2014-01-07T10:17:38.704</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Background.png">
+      <PackagePath>SnappedViewMainGame_Images\Background.png</PackagePath>
+      <Modified>2014-01-14T19:59:20.836</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Colour_Rect %28Layer Mask%29.png">
+      <PackagePath>SnappedViewMainGame_Images\Colour_Rect %28Layer Mask%29.png</PackagePath>
+      <Modified>2014-01-14T19:59:19.840</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Colour_Rect %28Layer Mask%291.png">
+      <PackagePath>SnappedViewMainGame_Images\Colour_Rect %28Layer Mask%291.png</PackagePath>
+      <Modified>2014-01-14T19:59:19.983</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Colour_Rect %28Layer Mask%292.png">
+      <PackagePath>SnappedViewMainGame_Images\Colour_Rect %28Layer Mask%292.png</PackagePath>
+      <Modified>2014-01-14T19:59:20.072</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Colour_Rect %28Layer Mask%293.png">
+      <PackagePath>SnappedViewMainGame_Images\Colour_Rect %28Layer Mask%293.png</PackagePath>
+      <Modified>2014-01-14T19:59:20.153</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Colour_Rect.png">
+      <PackagePath>SnappedViewMainGame_Images\Colour_Rect.png</PackagePath>
+      <Modified>2014-01-14T19:59:19.770</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Colour_Rect1.png">
+      <PackagePath>SnappedViewMainGame_Images\Colour_Rect1.png</PackagePath>
+      <Modified>2014-01-14T19:59:19.978</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Colour_Rect2.png">
+      <PackagePath>SnappedViewMainGame_Images\Colour_Rect2.png</PackagePath>
+      <Modified>2014-01-14T19:59:20.064</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Colour_Rect3.png">
+      <PackagePath>SnappedViewMainGame_Images\Colour_Rect3.png</PackagePath>
+      <Modified>2014-01-14T19:59:20.142</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Main_Rect %28Layer Mask%29.png">
+      <PackagePath>SnappedViewMainGame_Images\Main_Rect %28Layer Mask%29.png</PackagePath>
+      <Modified>2014-01-14T19:59:19.973</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Main_Rect %28Layer Mask%291.png">
+      <PackagePath>SnappedViewMainGame_Images\Main_Rect %28Layer Mask%291.png</PackagePath>
+      <Modified>2014-01-14T19:59:20.055</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Main_Rect %28Layer Mask%292.png">
+      <PackagePath>SnappedViewMainGame_Images\Main_Rect %28Layer Mask%292.png</PackagePath>
+      <Modified>2014-01-14T19:59:20.127</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Main_Rect %28Layer Mask%293.png">
+      <PackagePath>SnappedViewMainGame_Images\Main_Rect %28Layer Mask%293.png</PackagePath>
+      <Modified>2014-01-14T19:59:20.228</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Main_Rect.png">
+      <PackagePath>SnappedViewMainGame_Images\Main_Rect.png</PackagePath>
+      <Modified>2014-01-14T19:59:19.965</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Main_Rect1.png">
+      <PackagePath>SnappedViewMainGame_Images\Main_Rect1.png</PackagePath>
+      <Modified>2014-01-14T19:59:20.042</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Main_Rect2.png">
+      <PackagePath>SnappedViewMainGame_Images\Main_Rect2.png</PackagePath>
+      <Modified>2014-01-14T19:59:20.117</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Main_Rect3.png">
+      <PackagePath>SnappedViewMainGame_Images\Main_Rect3.png</PackagePath>
+      <Modified>2014-01-14T19:59:20.216</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Main_Rect_Glassed %28Layer Mask%29.png">
+      <PackagePath>SnappedViewMainGame_Images\Main_Rect_Glassed %28Layer Mask%29.png</PackagePath>
+      <Modified>2014-01-14T19:59:19.881</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Main_Rect_Glassed %28Layer Mask%291.png">
+      <PackagePath>SnappedViewMainGame_Images\Main_Rect_Glassed %28Layer Mask%291.png</PackagePath>
+      <Modified>2014-01-14T19:59:20.034</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Main_Rect_Glassed %28Layer Mask%292.png">
+      <PackagePath>SnappedViewMainGame_Images\Main_Rect_Glassed %28Layer Mask%292.png</PackagePath>
+      <Modified>2014-01-14T19:59:20.107</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Main_Rect_Glassed %28Layer Mask%293.png">
+      <PackagePath>SnappedViewMainGame_Images\Main_Rect_Glassed %28Layer Mask%293.png</PackagePath>
+      <Modified>2014-01-14T19:59:20.204</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Main_Rect_Glassed.png">
+      <PackagePath>SnappedViewMainGame_Images\Main_Rect_Glassed.png</PackagePath>
+      <Modified>2014-01-14T19:59:19.868</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Main_Rect_Glassed1.png">
+      <PackagePath>SnappedViewMainGame_Images\Main_Rect_Glassed1.png</PackagePath>
+      <Modified>2014-01-14T19:59:19.994</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Main_Rect_Glassed2.png">
+      <PackagePath>SnappedViewMainGame_Images\Main_Rect_Glassed2.png</PackagePath>
+      <Modified>2014-01-14T19:59:20.093</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\SnappedViewMainGame_Images\Main_Rect_Glassed3.png">
+      <PackagePath>SnappedViewMainGame_Images\Main_Rect_Glassed3.png</PackagePath>
+      <Modified>2014-01-14T19:59:20.189</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\Assets\QData.xml">
+      <PackagePath>Assets\QData.xml</PackagePath>
+      <Modified>2014-01-06T19:10:13.435</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\mainMenuScreen_Images\Background_Long.jpg">
+      <PackagePath>mainMenuScreen_Images\Background_Long.jpg</PackagePath>
+      <Modified>2014-01-06T22:09:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\Sfx\BackgroundMusic.mp3">
+      <PackagePath>Sfx\BackgroundMusic.mp3</PackagePath>
+      <Modified>2014-01-13T12:33:53.997</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\Sfx\Sfx_Click.mp3">
+      <PackagePath>Sfx\Sfx_Click.mp3</PackagePath>
+      <Modified>2014-01-11T18:12:39.527</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\Sfx\Sfx_Clock.mp3">
+      <PackagePath>Sfx\Sfx_Clock.mp3</PackagePath>
+      <Modified>2014-01-12T09:27:14.612</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\Sfx\Sfx_Correct.mp3">
+      <PackagePath>Sfx\Sfx_Correct.mp3</PackagePath>
+      <Modified>2014-01-11T18:12:25.235</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\Sfx\Sfx_Incorrect.mp3">
+      <PackagePath>Sfx\Sfx_Incorrect.mp3</PackagePath>
+      <Modified>2014-01-11T18:03:38.435</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\Sfx\Woosh1.mp3">
+      <PackagePath>Sfx\Woosh1.mp3</PackagePath>
+      <Modified>2014-01-11T19:33:10.070</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\Sfx\Woosh2.mp3">
+      <PackagePath>Sfx\Woosh2.mp3</PackagePath>
+      <Modified>2014-01-11T19:33:17.230</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\Sfx\Woosh3.mp3">
+      <PackagePath>Sfx\Woosh3.mp3</PackagePath>
+      <Modified>2014-01-11T19:33:24.351</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2014-01-14T20:19:30.432</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\bin\Debug\MainMenu.xbf">
+      <PackagePath>MainMenu.xbf</PackagePath>
+      <Modified>2014-01-14T23:50:46.556</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\bin\Debug\MainGame.xbf">
+      <PackagePath>MainGame.xbf</PackagePath>
+      <Modified>2014-01-14T23:30:51.274</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\bin\Debug\SettingsFlyout2.xbf">
+      <PackagePath>SettingsFlyout2.xbf</PackagePath>
+      <Modified>2014-01-14T23:39:51.941</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Konstantinos\Documents\Visual Studio 2013\Projects\Bequized\Bequized\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2014-01-25T12:14:22.787</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
